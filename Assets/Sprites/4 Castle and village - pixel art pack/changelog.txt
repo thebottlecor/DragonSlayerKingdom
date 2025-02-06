@@ -1,0 +1,22 @@
+
+
+*Changelog:
+v1.0
+First Version!
+
+
+v2.0
+
+-updated trees_and_roads_tileset.png (expanded walls, added new brick ground)
+
+-updated City_tileset.png (added new castles, added city square, added all towers variants)
+
+-Updated tileset_terrain_glass.png (The size of the file increase, the tiles in Forest_tileset were combined in this file
+--deleted Forest_tileset.png
+--deleted Forest_tileset2.png
+--deleted Forest_tileset3.png
+
+-Added palette.png and pallete.ase
+-Added smoke.png (to use on chimney houses)
+-Added City_farm_tileset.png (new house styles)
+-Added villagers.png

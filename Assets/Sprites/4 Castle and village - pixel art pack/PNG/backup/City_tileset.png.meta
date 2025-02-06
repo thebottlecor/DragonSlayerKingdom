@@ -1,0 +1,3315 @@
+fileFormatVersion: 2
+guid: a596609ca275ac24bbe49bd50cced8c0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1417231770596140354
+    second: City_tileset_0
+  - first:
+      213: 656004769284357637
+    second: City_tileset_1
+  - first:
+      213: 3441053598466784552
+    second: City_tileset_2
+  - first:
+      213: 6445718282888533068
+    second: City_tileset_3
+  - first:
+      213: 3278581759021878688
+    second: City_tileset_4
+  - first:
+      213: 8651132642124424076
+    second: City_tileset_5
+  - first:
+      213: -4522319667293730884
+    second: City_tileset_6
+  - first:
+      213: 4842807080619918696
+    second: City_tileset_7
+  - first:
+      213: 8993551739433531122
+    second: City_tileset_8
+  - first:
+      213: 6170548320678642372
+    second: City_tileset_9
+  - first:
+      213: -5321209639324530819
+    second: City_tileset_10
+  - first:
+      213: -3905671487677242650
+    second: City_tileset_11
+  - first:
+      213: -3002580956733736398
+    second: City_tileset_12
+  - first:
+      213: -7037379119696294076
+    second: City_tileset_13
+  - first:
+      213: -5732803806229392540
+    second: City_tileset_14
+  - first:
+      213: -5419227904307286327
+    second: City_tileset_15
+  - first:
+      213: -6051439736187718705
+    second: City_tileset_16
+  - first:
+      213: 2409968396447198460
+    second: City_tileset_17
+  - first:
+      213: -6990731561367772020
+    second: City_tileset_18
+  - first:
+      213: -1952655982841876157
+    second: City_tileset_19
+  - first:
+      213: -8977617214530874524
+    second: City_tileset_20
+  - first:
+      213: 3231497853570571767
+    second: City_tileset_21
+  - first:
+      213: 7862694647786114549
+    second: City_tileset_22
+  - first:
+      213: 4629764754761051969
+    second: City_tileset_23
+  - first:
+      213: -5596945304975914348
+    second: City_tileset_24
+  - first:
+      213: -1227506545676743131
+    second: City_tileset_25
+  - first:
+      213: -4934492011887186651
+    second: City_tileset_26
+  - first:
+      213: 5884065990888431253
+    second: City_tileset_27
+  - first:
+      213: 5652993971407901585
+    second: City_tileset_28
+  - first:
+      213: -451707814384215515
+    second: City_tileset_29
+  - first:
+      213: -1712355518590991309
+    second: City_tileset_30
+  - first:
+      213: 4442960311266251822
+    second: City_tileset_31
+  - first:
+      213: 1338165769105743985
+    second: City_tileset_32
+  - first:
+      213: -1319025310067183130
+    second: City_tileset_33
+  - first:
+      213: -5065198764658727362
+    second: City_tileset_34
+  - first:
+      213: -4335641482175954360
+    second: City_tileset_35
+  - first:
+      213: -5714771291539988026
+    second: City_tileset_36
+  - first:
+      213: 306962524405232966
+    second: City_tileset_37
+  - first:
+      213: -5971749334016660393
+    second: City_tileset_38
+  - first:
+      213: -969702918894319657
+    second: City_tileset_39
+  - first:
+      213: -8326481242969890534
+    second: City_tileset_40
+  - first:
+      213: -503848268539361855
+    second: City_tileset_41
+  - first:
+      213: 2168634737467983417
+    second: City_tileset_42
+  - first:
+      213: -5213212401464110374
+    second: City_tileset_43
+  - first:
+      213: 4494999051423019139
+    second: City_tileset_44
+  - first:
+      213: 3137850102762732506
+    second: City_tileset_45
+  - first:
+      213: -8062064859808475502
+    second: City_tileset_46
+  - first:
+      213: 2702025440239883826
+    second: City_tileset_47
+  - first:
+      213: 5149406831777567851
+    second: City_tileset_48
+  - first:
+      213: 1534657569692758211
+    second: City_tileset_49
+  - first:
+      213: 159838222477242514
+    second: City_tileset_50
+  - first:
+      213: -2623463133587751292
+    second: City_tileset_51
+  - first:
+      213: 4719930537888024952
+    second: City_tileset_52
+  - first:
+      213: 6476572515359632030
+    second: City_tileset_53
+  - first:
+      213: -2857266338404994807
+    second: City_tileset_54
+  - first:
+      213: 6232283663906751779
+    second: City_tileset_55
+  - first:
+      213: 4013509625891374418
+    second: City_tileset_56
+  - first:
+      213: 1178088603493222523
+    second: City_tileset_57
+  - first:
+      213: -5821944550416357259
+    second: City_tileset_58
+  - first:
+      213: -5730875007284779728
+    second: City_tileset_59
+  - first:
+      213: -5633617964468544805
+    second: City_tileset_60
+  - first:
+      213: 878745472878682911
+    second: City_tileset_61
+  - first:
+      213: -9082112116092779959
+    second: City_tileset_62
+  - first:
+      213: -2996138296780830792
+    second: City_tileset_63
+  - first:
+      213: -896714754481778779
+    second: City_tileset_64
+  - first:
+      213: -2197468483175220456
+    second: City_tileset_65
+  - first:
+      213: 2223343733425281612
+    second: City_tileset_66
+  - first:
+      213: 7133563066340985668
+    second: City_tileset_67
+  - first:
+      213: -19550892323799148
+    second: City_tileset_68
+  - first:
+      213: -3242967021769018150
+    second: City_tileset_69
+  - first:
+      213: 97325530314730500
+    second: City_tileset_70
+  - first:
+      213: 735312086978253313
+    second: City_tileset_71
+  - first:
+      213: 5351134555874656532
+    second: City_tileset_72
+  - first:
+      213: -4478116378862171373
+    second: City_tileset_73
+  - first:
+      213: 8672336540410880172
+    second: City_tileset_74
+  - first:
+      213: -2393971390108338127
+    second: City_tileset_75
+  - first:
+      213: -7690516992061821206
+    second: City_tileset_76
+  - first:
+      213: 2856533146760785853
+    second: City_tileset_77
+  - first:
+      213: 4521555528001004863
+    second: City_tileset_78
+  - first:
+      213: 5768232977271692574
+    second: City_tileset_79
+  - first:
+      213: 2793205632708535193
+    second: City_tileset_80
+  - first:
+      213: -534896618205022711
+    second: City_tileset_81
+  - first:
+      213: -5978379870560794596
+    second: City_tileset_82
+  - first:
+      213: -8148153521235805134
+    second: City_tileset_83
+  - first:
+      213: -7534502493850187905
+    second: City_tileset_84
+  - first:
+      213: -4311586655949184215
+    second: City_tileset_85
+  - first:
+      213: 3527610147630211054
+    second: City_tileset_86
+  - first:
+      213: -3494001136051947522
+    second: City_tileset_87
+  - first:
+      213: 7903605039250396209
+    second: City_tileset_88
+  - first:
+      213: -7628554105871957292
+    second: City_tileset_89
+  - first:
+      213: -6392937521565543471
+    second: City_tileset_90
+  - first:
+      213: 4535199644844082373
+    second: City_tileset_91
+  - first:
+      213: 833246404743881534
+    second: City_tileset_92
+  - first:
+      213: -8398403398016437926
+    second: City_tileset_93
+  - first:
+      213: -1043308564261214645
+    second: City_tileset_94
+  - first:
+      213: 4199700757380224789
+    second: City_tileset_95
+  - first:
+      213: 2099208930570480163
+    second: City_tileset_96
+  - first:
+      213: -5833369242977558738
+    second: City_tileset_97
+  - first:
+      213: 1642209600835904952
+    second: City_tileset_98
+  - first:
+      213: -119293970280679155
+    second: City_tileset_99
+  - first:
+      213: 575771435339569075
+    second: City_tileset_100
+  - first:
+      213: -1080920162746517662
+    second: City_tileset_101
+  - first:
+      213: 7889225238700771592
+    second: City_tileset_102
+  - first:
+      213: 4634395417389883022
+    second: City_tileset_103
+  - first:
+      213: 373299001446385594
+    second: City_tileset_104
+  - first:
+      213: 8317767753930887759
+    second: City_tileset_105
+  - first:
+      213: -5422669221842878781
+    second: City_tileset_106
+  - first:
+      213: 51603702787970558
+    second: City_tileset_107
+  - first:
+      213: 7586380524869422276
+    second: City_tileset_108
+  - first:
+      213: -2907489572384379002
+    second: City_tileset_109
+  - first:
+      213: -5130760103086869182
+    second: City_tileset_110
+  - first:
+      213: -1559223372087843467
+    second: City_tileset_111
+  - first:
+      213: 1839295087130324417
+    second: City_tileset_112
+  - first:
+      213: 7971328865142978047
+    second: City_tileset_113
+  - first:
+      213: -3254669291622493649
+    second: City_tileset_114
+  - first:
+      213: -7071884452881094294
+    second: City_tileset_115
+  - first:
+      213: 6667301927417001094
+    second: City_tileset_116
+  - first:
+      213: 6894124194190476015
+    second: City_tileset_117
+  - first:
+      213: 4977648037315695418
+    second: City_tileset_118
+  - first:
+      213: 7054891911805232662
+    second: City_tileset_119
+  - first:
+      213: -5143419624032365767
+    second: City_tileset_120
+  - first:
+      213: -325315710235235463
+    second: City_tileset_121
+  - first:
+      213: 7242344037043926669
+    second: City_tileset_122
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: City_tileset_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 451
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eba1835a63bf45ce0800000000000000
+      internalID: -1417231770596140354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 467
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ef72cacd89a1900800000000000000
+      internalID: 656004769284357637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_2
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 451
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82d31bd240411cf20800000000000000
+      internalID: 3441053598466784552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_3
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 467
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c44dfcd90aac37950800000000000000
+      internalID: 6445718282888533068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 467
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad03993dbcdf7d20800000000000000
+      internalID: 3278581759021878688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_5
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 451
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c83ec966d4ffe0870800000000000000
+      internalID: 8651132642124424076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 451
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb7c13e093e7d31c0800000000000000
+      internalID: -4522319667293730884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_7
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 451
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 865c81ca16b153340800000000000000
+      internalID: 4842807080619918696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_8
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 451
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f6380a38a38fcc70800000000000000
+      internalID: 8993551739433531122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_9
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 451
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c20f63310132a550800000000000000
+      internalID: 6170548320678642372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_10
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 451
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d774da8a6044726b0800000000000000
+      internalID: -5321209639324530819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 451
+        width: 17
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e260af99744cc9c0800000000000000
+      internalID: -3905671487677242650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_12
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 467
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a78883780b456d0800000000000000
+      internalID: -3002580956733736398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_13
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 435
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44f40cce9f4365e90800000000000000
+      internalID: -7037379119696294076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_14
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 403
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46390badf4df070b0800000000000000
+      internalID: -5732803806229392540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_15
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 435
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce21eeeee80bc4b0800000000000000
+      internalID: -5419227904307286327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 419
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc3f8d03f97f40ca0800000000000000
+      internalID: -6051439736187718705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 435
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfc272eec7de17120800000000000000
+      internalID: 2409968396447198460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 435
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c84ef84feaeebfe90800000000000000
+      internalID: -6990731561367772020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_19
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 419
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3413b2eaab5c6e4e0800000000000000
+      internalID: -1952655982841876157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_20
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 403
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 463947675b8196380800000000000000
+      internalID: -8977617214530874524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_21
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 403
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fdd2863d2698dc20800000000000000
+      internalID: 3231497853570571767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_22
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 419
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fd08a2bf17ed1d60800000000000000
+      internalID: 7862694647786114549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_23
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 419
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14fe721d38a304040800000000000000
+      internalID: 4629764754761051969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_24
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 419
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ace9526e7a352b0800000000000000
+      internalID: -5596945304975914348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_25
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 419
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e8871ec4507fee0800000000000000
+      internalID: -1227506545676743131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_26
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 435
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52d2674c8a9258bb0800000000000000
+      internalID: -4934492011887186651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_27
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 435
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59e9cd5f7d668a150800000000000000
+      internalID: 5884065990888431253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_28
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 435
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 193513fe018737e40800000000000000
+      internalID: 5652993971407901585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_29
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 435
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a5c55d2263bb9f0800000000000000
+      internalID: -451707814384215515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_30
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 419
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33444317abd7c38e0800000000000000
+      internalID: -1712355518590991309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_31
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 387
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e241f200dd098ad30800000000000000
+      internalID: 4442960311266251822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_32
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 403
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170a2265dae129210800000000000000
+      internalID: 1338165769105743985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_33
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 406
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e132bf0871e1bde0800000000000000
+      internalID: -1319025310067183130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_34
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 403
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e36e4c36f8cc4b9b0800000000000000
+      internalID: -5065198764658727362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_35
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 387
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 842447d0b05b4d3c0800000000000000
+      internalID: -4335641482175954360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_36
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 339
+        width: 50
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c1a82bd9cd01b0b0800000000000000
+      internalID: -5714771291539988026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_37
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 405
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645f7822acc824400800000000000000
+      internalID: 306962524405232966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_38
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 387
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ce242de95102da0800000000000000
+      internalID: -5971749334016660393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_39
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 387
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d705ad355cea82f0800000000000000
+      internalID: -969702918894319657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_40
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 387
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a11a3d3dc65627c80800000000000000
+      internalID: -8326481242969890534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_41
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 371
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c504055ba8f109f0800000000000000
+      internalID: -503848268539361855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_42
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 371
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9360a56cdc9881e10800000000000000
+      internalID: 2168634737467983417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_43
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 371
+        width: 12
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad2121011f2f6a7b0800000000000000
+      internalID: -5213212401464110374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_44
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 341
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38079cd52d1716e30800000000000000
+      internalID: 4494999051423019139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_45
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 371
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb789d1b02eb8b20800000000000000
+      internalID: 3137850102762732506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_46
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 371
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 296d4f289bacd1090800000000000000
+      internalID: -8062064859808475502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_47
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 355
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 236119b62d58f7520800000000000000
+      internalID: 2702025440239883826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_48
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 355
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6452141b3e567740800000000000000
+      internalID: 5149406831777567851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_49
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 363
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0b66dbde23c4510800000000000000
+      internalID: 1534657569692758211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_50
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 339
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2903948340cd73200800000000000000
+      internalID: 159838222477242514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_51
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 355
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e3b210e26979bd0800000000000000
+      internalID: -2623463133587751292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_52
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 342
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 879855321df808140800000000000000
+      internalID: 4719930537888024952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_53
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 342
+        width: 12
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9aa11c636861e950800000000000000
+      internalID: 6476572515359632030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_54
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 339
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90170b65763f858d0800000000000000
+      internalID: -2857266338404994807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_55
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 339
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325c1a6e8f48d7650800000000000000
+      internalID: 6232283663906751779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_56
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 339
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 255cdd18db9d2b730800000000000000
+      internalID: 4013509625891374418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_57
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 308
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b784625d759695010800000000000000
+      internalID: 1178088603493222523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_58
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 307
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5786962074c443fa0800000000000000
+      internalID: -5821944550416357259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_59
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 310
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03560aa5b87d770b0800000000000000
+      internalID: -5730875007284779728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_60
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 312
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdad79b3f4e51d1b0800000000000000
+      internalID: -5633617964468544805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_61
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 307
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f13aaee0a5ee13c00800000000000000
+      internalID: 878745472878682911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_62
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 291
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942c406462bd5f180800000000000000
+      internalID: -9082112116092779959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_63
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 312
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b74f62e7149b66d0800000000000000
+      internalID: -2996138296780830792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_64
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 308
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af034a8eaa3e83f0800000000000000
+      internalID: -896714754481778779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_65
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 259
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b7937ae060181e0800000000000000
+      internalID: -2197468483175220456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_66
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 291
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a97648857eade10800000000000000
+      internalID: 2223343733425281612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_67
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 275
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44bc91840d18ff260800000000000000
+      internalID: 7133563066340985668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_68
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 291
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f7ff7219a8abff0800000000000000
+      internalID: -19550892323799148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_69
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 275
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad4b629fcaaaef2d0800000000000000
+      internalID: -3242967021769018150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_70
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 259
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c6cfddd05c95100800000000000000
+      internalID: 97325530314730500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_71
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 259
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102d36f727a543a00800000000000000
+      internalID: 735312086978253313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_72
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 259
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4110a3ce68c034a40800000000000000
+      internalID: 5351134555874656532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_73
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 259
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31bcf0721e88ad1c0800000000000000
+      internalID: -4478116378862171373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_74
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 259
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca0a4dfa2245a5870800000000000000
+      internalID: 8672336540410880172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_75
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 195
+        width: 16
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 138f42a54b7e6ced0800000000000000
+      internalID: -2393971390108338127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_76
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 195
+        width: 16
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeeac05ba8bc54590800000000000000
+      internalID: -7690516992061821206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_77
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 227
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf2ecd23c174a720800000000000000
+      internalID: 2856533146760785853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_78
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 227
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3524b6ebcacfbe30800000000000000
+      internalID: 4521555528001004863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_79
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 227
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1d19f7d451ec0050800000000000000
+      internalID: 5768232977271692574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_80
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 227
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 993663259b573c620800000000000000
+      internalID: 2793205632708535193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_81
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 227
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 906f4581c5aa398f0800000000000000
+      internalID: -534896618205022711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_82
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 227
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18c0eabe27880da0800000000000000
+      internalID: -5978379870560794596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_83
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 227
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c346f0b81fbee80800000000000000
+      internalID: -8148153521235805134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_84
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 227
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f77c3ceb6e1107790800000000000000
+      internalID: -7534502493850187905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_85
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 195
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923a5d9b7ca2a24c0800000000000000
+      internalID: -4311586655949184215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_86
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 195
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eefdf8b3db694f030800000000000000
+      internalID: 3527610147630211054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_87
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 195
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef7ffc09a70d28fc0800000000000000
+      internalID: -3494001136051947522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_88
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 195
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 134d18978ee3fad60800000000000000
+      internalID: 7903605039250396209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_89
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 195
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d287a1657ee12690800000000000000
+      internalID: -7628554105871957292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_90
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 195
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d3d1d30239b747a0800000000000000
+      internalID: -6392937521565543471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_91
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 195
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c4c8686c0440fe30800000000000000
+      internalID: 4535199644844082373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_92
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 195
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e33612db039409b00800000000000000
+      internalID: 833246404743881534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_93
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 147
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a51fbcc2b90e27b80800000000000000
+      internalID: -8398403398016437926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_94
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 147
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b466614736c6581f0800000000000000
+      internalID: -1043308564261214645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_95
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 147
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 517569e7695584a30800000000000000
+      internalID: 4199700757380224789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_96
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 147
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32a2bf77663e12d10800000000000000
+      internalID: 2099208930570480163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_97
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 147
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f12ac7495bb0fa0800000000000000
+      internalID: -5833369242977558738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_98
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 147
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b56f806eec4ac610800000000000000
+      internalID: 1642209600835904952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_99
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 115
+        width: 16
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09f29d14ce285ef0800000000000000
+      internalID: -119293970280679155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_100
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 147
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b75b33e11d8df700800000000000000
+      internalID: 575771435339569075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_101
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 51
+        width: 34
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 267bfe4c6dccff0f0800000000000000
+      internalID: -1080920162746517662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_102
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 77
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8094ec14e882c7d60800000000000000
+      internalID: 7889225238700771592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_103
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 77
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8ed83af31ea05040800000000000000
+      internalID: 4634395417389883022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_104
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 86
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab74838c6793e2500800000000000000
+      internalID: 373299001446385594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_105
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 115
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f42df39e3b5ae6370800000000000000
+      internalID: 8317767753930887759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_106
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 115
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce7c91c21fceb4b0800000000000000
+      internalID: -5422669221842878781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_107
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 85
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef595c55b4557b000800000000000000
+      internalID: 51603702787970558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_108
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 115
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc88cb94ec384960800000000000000
+      internalID: 7586380524869422276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_109
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 115
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f60e173a586a7d0800000000000000
+      internalID: -2907489572384379002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_110
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 85
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 245b2c3ced0ebc8b0800000000000000
+      internalID: -5130760103086869182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_111
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 115
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 575a73daa968c5ae0800000000000000
+      internalID: -1559223372087843467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_112
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 77
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd2681032d768910800000000000000
+      internalID: 1839295087130324417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_113
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 88
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff53aa27e59df9e60800000000000000
+      internalID: 7971328865142978047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_114
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 29
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f221873f58715d2d0800000000000000
+      internalID: -3254669291622493649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_115
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 29
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a692a6dfe8e9bdd90800000000000000
+      internalID: -7071884452881094294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_116
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 29
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 684b7f137c3078c50800000000000000
+      internalID: 6667301927417001094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_117
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 54
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe246209d69dcaf50800000000000000
+      internalID: 6894124194190476015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_118
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 53
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a335f196488241540800000000000000
+      internalID: 4977648037315695418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_119
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 20
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6166debb0d208e160800000000000000
+      internalID: 7054891911805232662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_120
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 19
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93317ca5a17ee98b0800000000000000
+      internalID: -5143419624032365767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_121
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 20
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97b239bc51f3c7bf0800000000000000
+      internalID: -325315710235235463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City_tileset_122
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 24
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d86fb25b789f18460800000000000000
+      internalID: 7242344037043926669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      City_tileset_0: -1417231770596140354
+      City_tileset_1: 656004769284357637
+      City_tileset_10: -5321209639324530819
+      City_tileset_100: 575771435339569075
+      City_tileset_101: -1080920162746517662
+      City_tileset_102: 7889225238700771592
+      City_tileset_103: 4634395417389883022
+      City_tileset_104: 373299001446385594
+      City_tileset_105: 8317767753930887759
+      City_tileset_106: -5422669221842878781
+      City_tileset_107: 51603702787970558
+      City_tileset_108: 7586380524869422276
+      City_tileset_109: -2907489572384379002
+      City_tileset_11: -3905671487677242650
+      City_tileset_110: -5130760103086869182
+      City_tileset_111: -1559223372087843467
+      City_tileset_112: 1839295087130324417
+      City_tileset_113: 7971328865142978047
+      City_tileset_114: -3254669291622493649
+      City_tileset_115: -7071884452881094294
+      City_tileset_116: 6667301927417001094
+      City_tileset_117: 6894124194190476015
+      City_tileset_118: 4977648037315695418
+      City_tileset_119: 7054891911805232662
+      City_tileset_12: -3002580956733736398
+      City_tileset_120: -5143419624032365767
+      City_tileset_121: -325315710235235463
+      City_tileset_122: 7242344037043926669
+      City_tileset_13: -7037379119696294076
+      City_tileset_14: -5732803806229392540
+      City_tileset_15: -5419227904307286327
+      City_tileset_16: -6051439736187718705
+      City_tileset_17: 2409968396447198460
+      City_tileset_18: -6990731561367772020
+      City_tileset_19: -1952655982841876157
+      City_tileset_2: 3441053598466784552
+      City_tileset_20: -8977617214530874524
+      City_tileset_21: 3231497853570571767
+      City_tileset_22: 7862694647786114549
+      City_tileset_23: 4629764754761051969
+      City_tileset_24: -5596945304975914348
+      City_tileset_25: -1227506545676743131
+      City_tileset_26: -4934492011887186651
+      City_tileset_27: 5884065990888431253
+      City_tileset_28: 5652993971407901585
+      City_tileset_29: -451707814384215515
+      City_tileset_3: 6445718282888533068
+      City_tileset_30: -1712355518590991309
+      City_tileset_31: 4442960311266251822
+      City_tileset_32: 1338165769105743985
+      City_tileset_33: -1319025310067183130
+      City_tileset_34: -5065198764658727362
+      City_tileset_35: -4335641482175954360
+      City_tileset_36: -5714771291539988026
+      City_tileset_37: 306962524405232966
+      City_tileset_38: -5971749334016660393
+      City_tileset_39: -969702918894319657
+      City_tileset_4: 3278581759021878688
+      City_tileset_40: -8326481242969890534
+      City_tileset_41: -503848268539361855
+      City_tileset_42: 2168634737467983417
+      City_tileset_43: -5213212401464110374
+      City_tileset_44: 4494999051423019139
+      City_tileset_45: 3137850102762732506
+      City_tileset_46: -8062064859808475502
+      City_tileset_47: 2702025440239883826
+      City_tileset_48: 5149406831777567851
+      City_tileset_49: 1534657569692758211
+      City_tileset_5: 8651132642124424076
+      City_tileset_50: 159838222477242514
+      City_tileset_51: -2623463133587751292
+      City_tileset_52: 4719930537888024952
+      City_tileset_53: 6476572515359632030
+      City_tileset_54: -2857266338404994807
+      City_tileset_55: 6232283663906751779
+      City_tileset_56: 4013509625891374418
+      City_tileset_57: 1178088603493222523
+      City_tileset_58: -5821944550416357259
+      City_tileset_59: -5730875007284779728
+      City_tileset_6: -4522319667293730884
+      City_tileset_60: -5633617964468544805
+      City_tileset_61: 878745472878682911
+      City_tileset_62: -9082112116092779959
+      City_tileset_63: -2996138296780830792
+      City_tileset_64: -896714754481778779
+      City_tileset_65: -2197468483175220456
+      City_tileset_66: 2223343733425281612
+      City_tileset_67: 7133563066340985668
+      City_tileset_68: -19550892323799148
+      City_tileset_69: -3242967021769018150
+      City_tileset_7: 4842807080619918696
+      City_tileset_70: 97325530314730500
+      City_tileset_71: 735312086978253313
+      City_tileset_72: 5351134555874656532
+      City_tileset_73: -4478116378862171373
+      City_tileset_74: 8672336540410880172
+      City_tileset_75: -2393971390108338127
+      City_tileset_76: -7690516992061821206
+      City_tileset_77: 2856533146760785853
+      City_tileset_78: 4521555528001004863
+      City_tileset_79: 5768232977271692574
+      City_tileset_8: 8993551739433531122
+      City_tileset_80: 2793205632708535193
+      City_tileset_81: -534896618205022711
+      City_tileset_82: -5978379870560794596
+      City_tileset_83: -8148153521235805134
+      City_tileset_84: -7534502493850187905
+      City_tileset_85: -4311586655949184215
+      City_tileset_86: 3527610147630211054
+      City_tileset_87: -3494001136051947522
+      City_tileset_88: 7903605039250396209
+      City_tileset_89: -7628554105871957292
+      City_tileset_9: 6170548320678642372
+      City_tileset_90: -6392937521565543471
+      City_tileset_91: 4535199644844082373
+      City_tileset_92: 833246404743881534
+      City_tileset_93: -8398403398016437926
+      City_tileset_94: -1043308564261214645
+      City_tileset_95: 4199700757380224789
+      City_tileset_96: 2099208930570480163
+      City_tileset_97: -5833369242977558738
+      City_tileset_98: 1642209600835904952
+      City_tileset_99: -119293970280679155
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

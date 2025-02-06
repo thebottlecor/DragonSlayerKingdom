@@ -1,0 +1,61 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+[CreateAssetMenu(fileName = "UILibrary", menuName = "Library/UI")]
+public class UILibrary : ScriptableObject
+{
+
+    public Color button_MainColor;
+    public Color button_HighlightColor;
+    public Color button_subColor;
+    public Color button_inactiveColor;
+    public Color button_greenColor;
+
+    public Color button_Upgrade;
+    public Color button_Upgrade_needRes;
+    public Color button_Upgrade_needTier;
+
+    public Color hpColor0;
+    public Color hpColor1;
+    public Color hpColor2;
+
+    public Sprite shopButton;
+    public Sprite shopButtonHighlighted;
+    public Sprite gold;
+    public Sprite[] plus;
+
+    public Color[] customerPinColor;
+    public Gradient pizaaHpGradient;
+
+    public Gradient timeLightGradient;
+    public Gradient timeLightGradient_Bloodmoon;
+
+
+    public Sprite[] customerProfile;
+
+    public Color miniOrderUI_maskColor;
+    public Color miniOrderUI_maskColor_angry;
+
+    public Color order_unselect_Color = Color.white;
+    public Color order_select_Color;
+
+
+    [Serializable]
+    public struct ResearchLineInfo
+    {
+        public float thickness;
+        public Sprite sprite;
+    }
+    public List<ResearchLineInfo> researchLineInfos;
+
+
+    public List<Sprite> spaceshipParts;
+
+    public Sprite[] villagerItems;
+    public Sprite[] villagerProfile;
+    public Sprite[] villagerSkills;
+}
