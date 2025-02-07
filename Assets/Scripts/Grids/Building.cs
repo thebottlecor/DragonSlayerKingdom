@@ -47,4 +47,17 @@ public class Building : MonoBehaviour
         BuildingManager.Instance.playerBuildings.Add(this);
         GridBuildingSystem.Instance.TakeArea(areaTemp);
     }
+
+    public void Remove()
+    {
+        Vector3Int positionInt = GridBuildingSystem.Instance.gridLayout.WorldToCell(transform.position);
+        BoundsInt areaTemp = area;
+        areaTemp.position = positionInt;
+
+        Placed = false;
+        BuildingManager.Instance.playerBuildings.Remove(this);
+        GridBuildingSystem.Instance.RemoveArea(areaTemp);
+
+        Destroy(gameObject);
+    }
 }

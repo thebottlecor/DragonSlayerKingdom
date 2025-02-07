@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using DG.Tweening;
 using AYellowpaper.SerializedCollections;
+using UnityEngine.UI;
 
 public class GM : Singleton<GM>
 {
@@ -35,6 +36,14 @@ public class GM : Singleton<GM>
     public TextMeshProUGUI[] unemployedTexts;
     public TextMeshProUGUI[] housingTexts;
 
+    public RTSUnit[] walls;
+    // 계산된 결과
+    public int wallHpMax;
+    public int wallHp;
+    public int displayWallHp;
+    public TextMeshProUGUI wallHpText;
+    public Slider wallHpSlider;
+
     private void Start()
     {
         // 테스트
@@ -53,6 +62,10 @@ public class GM : Singleton<GM>
 
     private IEnumerator Delay()
     {
+        yield return null;
+
+        CalcWallHp();
+
         yield return new WaitForSeconds(1f);
 
         AddGold(1000);
@@ -309,4 +322,37 @@ public class GM : Singleton<GM>
         AddMetal(buildingInfo.cost_metal);
         AddFood(buildingInfo.cost_food);
     }
+
+    #region 성벽
+    public void CalcWallHp()
+    {
+        float target = 0;
+        float targetMax = 0;
+        for (int i = 0; i < walls.Length; i++)
+        {
+            target += walls[i].health;
+            targetMax += walls[i].maxHealth;
+        }
+
+        int targetHp = (int)target;
+        int targetHpMax = (int)targetMax;
+
+        wallHpMax = targetHpMax;
+        DOVirtual.Int(wallHp, targetHp, 0.5f, (x) =>
+        {
+            displayWallHp = x;
+            ShowWallHpText();
+        }).SetEase(Ease.OutCirc).SetUpdate(true);
+        wallHp = targetHp;
+    }
+
+    private void ShowWallHpText()
+    {
+        float percent = (float)displayWallHp / wallHpMax;
+
+        wallHpSlider.value = percent;
+        wallHpText.text = displayWallHp.ToString();
+    }
+
+    #endregion
 }

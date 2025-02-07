@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Pathfinding.Examples.RTS;
 
 public class Spawner : MonoBehaviour
 {
@@ -20,25 +19,37 @@ public class Spawner : MonoBehaviour
 	{
 		var go = GameObject.Instantiate(prefab[0], spawnPoint.position, spawnPoint.rotation);
 		var spawned = go.GetComponent<RTSUnit>();
-
-		spawned.team = unit.team;
-		spawned.SetDestination(rallyPoint.position, MovementMode.AttackMove);
-	}
+        SetSpawned(spawned);
+    }
 
 	public IEnumerator Spawn(Dictionary<GameObject, int> pool)
     {
 		foreach(var v in pool)
         {
 			for (int i = 0; i < v.Value; i++)
-			{
-				var go = GameObject.Instantiate(v.Key, spawnPoint.position, spawnPoint.rotation);
-				var spawned = go.GetComponent<RTSUnit>();
+            {
+                var go = GameObject.Instantiate(v.Key, spawnPoint.position, spawnPoint.rotation);
+                var spawned = go.GetComponent<RTSUnit>();
+                SetSpawned(spawned);
 
-				spawned.team = unit.team;
-				spawned.SetDestination(rallyPoint.position, MovementMode.AttackMove);
+                yield return null;
+                yield return null;
+            }
+        }
+    }
 
-				yield return null;
-			}
-		}
+    private void SetSpawned(RTSUnit spawned)
+    {
+        int team = unit.team;
+        spawned.team = team;
+        if (team == 2)
+        {
+            spawned.sprite.flipX = true;
+        }
+        else
+        {
+            spawned.sprite.flipX = false;
+        }
+        spawned.SetDestination(rallyPoint.position, MovementMode.AttackMove);
     }
 }

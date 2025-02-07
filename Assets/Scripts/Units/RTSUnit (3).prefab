@@ -74,7 +74,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1193898552716581225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6bc5dfee83dd4b1b82f2a8fedfe4012, type: 3}
+  m_Script: {fileID: 11500000, guid: 15feb20bb36e877488b7218248f89968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1073741824
@@ -88,6 +88,7 @@ MonoBehaviour:
   storedCrystals: 0
   reservedBy: {fileID: 0}
   locked: 0
+  sprite: {fileID: 4878905482054319322}
 --- !u!114 &2688270555959009292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1193898552716581225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9766a5ad6d2418884d35c57190d102, type: 3}
+  m_Script: {fileID: 11500000, guid: af2252a805f18724d877a762676cb80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ranged: 1
@@ -138,7 +139,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
+  m_Radius: 0.06
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6378308852918321479
 MonoBehaviour:
@@ -154,8 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1073741831
   shape:
-    radius: 0.1
-    height: 0.1
+    radius: 0.06
+    height: 0.06
   movement:
     follower:
       rotationSpeed: 600
@@ -210,7 +211,7 @@ GameObject:
   - component: {fileID: 1071381343326474242}
   - component: {fileID: 4878905482054319322}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,9 +276,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5879079879002270795, guid: 0dd14053cbf9b7841b28de4b6f7ff9e2, type: 3}
+  m_Sprite: {fileID: 7187739437350920247, guid: 67d8fae13a4fa2b47b6884709460f64a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}

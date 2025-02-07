@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 using AYellowpaper.SerializedCollections;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GridBuildingSystem : Singleton<GridBuildingSystem>
 {
@@ -28,9 +29,19 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
     private Vector3 prevPos;
     private BoundsInt prevArea;
 
+    private Building removeTemp;
+    public Slider removeCastingBar;
+    private int bulidingLayer;
+    private float removeTimer;
+    private const float removeTime = 1f;
+
     private void Start()
     {
         mainTilemap.gameObject.SetActive(false);
+        //bulidingLayer = 1 << LayerMask.NameToLayer("Building") | 1 << LayerMask.NameToLayer("Ramp");
+        bulidingLayer = 1 << LayerMask.NameToLayer("Building");
+        removeCastingBar.gameObject.SetActive(false);
+        removeTimer = 0f;
     }
 
     private TileBase[] GetTilesBlock(BoundsInt area, Tilemap tilemap)
@@ -133,13 +144,54 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
         SetTilesBlock(area, TileType.Empty, tempTilemap);
         SetTilesBlock(area, TileType.Green, mainTilemap);
     }
+    public void RemoveArea(BoundsInt area)
+    {
+        SetTilesBlock(area, TileType.White, mainTilemap);
+    }
 
     private void Update()
     {
         if (temp == null)
         {
-            return;
+            if (removeTemp == null)
+            {
+                if (Input.GetMouseButtonDown(1))
+                {
+                    Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+                    var others = Physics2D.Raycast(touchPos, Vector2.zero, 100f, bulidingLayer);
+
+                    if (others.collider != null)
+                    {
+                        removeTemp = others.collider.GetComponent<Building>();
+                        removeCastingBar.value = 0f;
+                        removeTimer = 0f;
+                        removeCastingBar.gameObject.SetActive(true);
+                    }
+                }
+            }
+            else
+            {
+                if (Input.GetMouseButton(1))
+                {
+                    removeTimer += Time.deltaTime;
+                    removeCastingBar.value = removeTimer / removeTime;
+
+                    if (removeTimer >= removeTime)
+                    {
+                        removeTemp.Remove();
+                        removeCastingBar.gameObject.SetActive(false);
+                        removeTemp = null;
+                    }
+                }
+                else
+                {
+                    removeCastingBar.gameObject.SetActive(false);
+                    removeTemp = null;
+                }
+            }
+
+            return;
         }
 
         if (Input.GetMouseButtonDown(1))

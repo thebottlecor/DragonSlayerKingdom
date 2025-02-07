@@ -24,6 +24,7 @@ namespace Pathfinding.Examples.RTS {
 			Heavy,
 			Worker,
 			Harvester,
+			Wall,
 
 			HarvesterDropoff = 100,
 			HarvesterDropoffQueue,
@@ -44,6 +45,8 @@ namespace Pathfinding.Examples.RTS {
 		public RTSUnit reservedBy;
 		public bool locked;
 		new Transform transform;
+
+		public SpriteRenderer sprite;
 
 		/// <summary>Position at the start of the current frame</summary>
 		protected Vector3 position;
@@ -263,19 +266,23 @@ namespace Pathfinding.Examples.RTS {
 			}
 		}
 
-		public void Die () {
+		public void Die () 
+		{
 			StartCoroutine(DieCoroutine());
 		}
 
-		IEnumerator DieCoroutine () {
+		IEnumerator DieCoroutine () 
+		{
 			yield return new WaitForEndOfFrame();
 			if (deathEffect != null) GameObject.Instantiate(deathEffect, transform.position, transform.rotation);
 			GameObject.Destroy(gameObject);
 		}
 
-		public void ApplyDamage (float damage) {
+		public void ApplyDamage (float damage) 
+		{
 			health = Mathf.Clamp(health - damage, 0, maxHealth);
-			if (health <= 0) {
+			if (health <= 0) 
+			{
 				Die();
 			}
 		}
