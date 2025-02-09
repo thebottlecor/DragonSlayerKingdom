@@ -33,7 +33,7 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
     public Slider removeCastingBar;
     private int bulidingLayer;
     private float removeTimer;
-    private const float removeTime = 1f;
+    private const float removeTime = 0.5f;
 
     private void Start()
     {
@@ -76,7 +76,7 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
     }
 
     // 버튼으로 건설 시작
-    public void InitWithBuilding(GameObject building)
+    public void InitWithBuilding(int idx)
     {
         if (temp != null)
         {
@@ -85,7 +85,7 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
         }
         mainTilemap.gameObject.SetActive(true);
 
-        temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
+        temp = Instantiate(BuildingManager.Instance.buildingInfos[idx].prefab, Vector3.zero, Quaternion.identity);
         temp.Init();
         FollowBuilding();
     }
@@ -210,12 +210,18 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (temp.CanBePlaced())
+            var result = temp.CanBePlaced();
+            switch (result)
             {
-                temp.Place();
-                temp = null;
-                mainTilemap.gameObject.SetActive(false);
-                return;
+                case Building.CannotBuild.okay:
+                    temp.Place();
+                    temp = null;
+                    mainTilemap.gameObject.SetActive(false);
+                    return;
+                case Building.CannotBuild.wrong_position:
+                    break;
+                case Building.CannotBuild.short_resource:
+                    break;
             }
         }
 
@@ -232,4 +238,6 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
             }
         }
     }
+
+    
 }

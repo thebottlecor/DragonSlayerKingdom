@@ -4,15 +4,25 @@ using System.Collections.Generic;
 
 public class Building : MonoBehaviour
 {
+    public int idx;
+
     public bool Placed { get; private set; }
     public BoundsInt area;
 
     public SpriteRenderer sprite;
     private Color baseColor;
 
-    [Header("Á¤º¸")]
-    public GameObject spawnUnit;
-    public int spawnCount = 1;
+    public enum CannotBuild
+    {
+        okay,
+        wrong_position,
+        short_resource,
+    }
+
+    public void Set_Idx(int idx)
+    {
+        this.idx = idx;
+    }
 
     public void Init()
     {
@@ -23,29 +33,38 @@ public class Building : MonoBehaviour
         sprite.color = tempColor;
     }
 
-    public bool CanBePlaced()
+    public CannotBuild CanBePlaced()
     {
         Vector3Int positionInt = GridBuildingSystem.Instance.gridLayout.WorldToCell(transform.position);
         BoundsInt areaTemp = area;
         areaTemp.position = positionInt;
 
-        if (GridBuildingSystem.Instance.CanTakeArea(areaTemp))
+        if (!GM.Instance.CheckRes(idx))
         {
-            return true;
+            return CannotBuild.short_resource;
         }
-        return false;
+
+        if (!GridBuildingSystem.Instance.CanTakeArea(areaTemp))
+        {
+            return CannotBuild.wrong_position;
+        }
+
+        return CannotBuild.okay;
     }
 
     public void Place()
     {
-        Vector3Int positionInt = GridBuildingSystem.Instance.gridLayout.WorldToCell(transform.position);
-        BoundsInt areaTemp = area;
-        areaTemp.position = positionInt;
+        if (BuildingManager.Instance.AddPlayerBuilding(this))
+        {
+            Vector3Int positionInt = GridBuildingSystem.Instance.gridLayout.WorldToCell(transform.position);
+            BoundsInt areaTemp = area;
+            areaTemp.position = positionInt;
 
-        Placed = true;
-        sprite.color = baseColor;
-        BuildingManager.Instance.playerBuildings.Add(this);
-        GridBuildingSystem.Instance.TakeArea(areaTemp);
+            Placed = true;
+            sprite.color = baseColor;
+
+            GridBuildingSystem.Instance.TakeArea(areaTemp);
+        }
     }
 
     public void Remove()
@@ -55,7 +74,7 @@ public class Building : MonoBehaviour
         areaTemp.position = positionInt;
 
         Placed = false;
-        BuildingManager.Instance.playerBuildings.Remove(this);
+        BuildingManager.Instance.RemovePlayerBuilding(this);
         GridBuildingSystem.Instance.RemoveArea(areaTemp);
 
         Destroy(gameObject);

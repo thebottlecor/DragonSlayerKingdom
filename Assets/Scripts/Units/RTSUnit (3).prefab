@@ -81,7 +81,7 @@ MonoBehaviour:
   selectionIndicator: {fileID: 0}
   deathEffect: {fileID: 0}
   team: 2
-  detectionRange: 20
+  detectionRange: 3
   maxHealth: 100
   type: 0
   health: 0

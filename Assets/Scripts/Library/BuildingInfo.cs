@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 [CreateAssetMenu(fileName = "BuildingInfo", menuName = "GameInfos/BuildingInfo")]
 public class BuildingInfo : ScriptableObject
 {
+    public Building prefab;
     
     [Header("속성")]
     public float product_gold;
@@ -19,6 +20,10 @@ public class BuildingInfo : ScriptableObject
 
     public int jobs;
     public int housing;
+
+    [Header("스폰")]
+    public GameObject spawnUnit;
+    public int spawnCount = 1;
 
     [Header("건설 비용")]
     public float cost_gold;

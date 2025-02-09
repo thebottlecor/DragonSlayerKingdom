@@ -30,19 +30,12 @@ public class StateManager : Singleton<StateManager>
 
     [Header("설정값")]
     public BuildingInfo[] buildingInfos;
-    public int totalState = 2;
     public float baseGrowthRating = 0.01f;
     public float cycleTime = 10f;
 
     [Header("게임 변수")]
-    public StateInfo[] infos;
-
-    public List<HaveBuildings> stateBuildings;
-    [Serializable]
-    public struct HaveBuildings
-    {
-        public List<int> list;
-    }
+    public StateInfo infos;
+    public List<int> stateBuildings;
 
     public Queue<BuildingQueueInfo> buildingQueue;
     [Serializable]
@@ -66,26 +59,20 @@ public class StateManager : Singleton<StateManager>
 
     private void Start()
     {
-        infos = new StateInfo[totalState];
+        infos = new StateInfo();
 
-        stateBuildings = new List<HaveBuildings>();
-        for (int i = 0; i < totalState; i++)
+        stateBuildings = new List<int>();
+        for (int n = 0; n < buildingInfos.Length; n++)
         {
-            HaveBuildings haveBuildings = new HaveBuildings();
-            haveBuildings.list = new List<int>();
-            for (int n = 0; n < buildingInfos.Length; n++)
-            {
-                haveBuildings.list.Add(0);
-            }
-            stateBuildings.Add(haveBuildings);
+            stateBuildings.Add(0);
         }
 
         buildingQueue = new Queue<BuildingQueueInfo>();
         currentBuildingTimer = int.MinValue;
 
         // 임시 초기 설정
-        stateBuildings[0].list[0] = 1;
-        infos[0].pop = 1000;
+        stateBuildings[0] = 1;
+        infos.pop = 1000;
 
         YieldState(false);
 
@@ -157,16 +144,16 @@ public class StateManager : Singleton<StateManager>
         }
     }
 
-    public void BuildSomething(int stateIdx, int buildingIdx, int count = 1)
+    public void BuildSomething(int buildingIdx, int count = 1)
     {
-        stateBuildings[stateIdx].list[buildingIdx] += count;
+        stateBuildings[buildingIdx] += count;
         //CalcState(stateIdx);
         YieldState(false);
     }
 
-    public void CalcState(int idx)
+    public void CalcState()
     {
-        StateInfo temp = infos[idx];
+        StateInfo temp = infos;
 
         float product_gold = 0;
         float product_metal = 0;
@@ -177,9 +164,9 @@ public class StateManager : Singleton<StateManager>
         int jobs = 0;
         int housing = 0;
 
-        for (int i = 0; i < stateBuildings[idx].list.Count; i++)
+        for (int i = 0; i < stateBuildings.Count; i++)
         {
-            int count = stateBuildings[idx].list[i];
+            int count = stateBuildings[i];
             var stat = buildingInfos[i];
 
             product_gold += stat.product_gold * count;
@@ -221,14 +208,14 @@ public class StateManager : Singleton<StateManager>
         growth_pop = Mathf.Max(growth_pop, 1f);
         temp.growth_pop = (int)growth_pop;
 
-        infos[idx] = temp;
+        infos = temp;
     }
 
-    public void AddPop(int idx)
+    public void AddPop()
     {
-        StateInfo temp = infos[idx];
+        StateInfo temp = infos;
         temp.pop += temp.growth_pop;
-        infos[idx] = temp;
+        infos = temp;
     }
 
 
@@ -243,22 +230,19 @@ public class StateManager : Singleton<StateManager>
         total_housing = 0;
         total_unemployed = 0;
 
-        for (int i = 0; i < totalState; i++)
-        {
-            CalcState(i);
-            if (addRes)
-                AddPop(i);
+        CalcState();
+        if (addRes)
+            AddPop();
 
-            total_product_gold += infos[i].product_gold;
-            total_product_metal += infos[i].product_metal;
-            total_product_food += infos[i].product_food;
-            total_product_research += infos[i].product_research;
+        total_product_gold += infos.product_gold;
+        total_product_metal += infos.product_metal;
+        total_product_food += infos.product_food;
+        total_product_research += infos.product_research;
 
-            total_pop += infos[i].pop;
-            total_growth_pop += infos[i].growth_pop;
-            total_housing += infos[i].housing;
-            total_unemployed += infos[i].unemployed;
-        }
+        total_pop += infos.pop;
+        total_growth_pop += infos.growth_pop;
+        total_housing += infos.housing;
+        total_unemployed += infos.unemployed;
 
         if (addRes)
         {

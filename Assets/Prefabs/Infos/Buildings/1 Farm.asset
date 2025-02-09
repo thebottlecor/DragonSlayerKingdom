@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25d17aa1ab0772469bb7ad964bf5875, type: 3}
   m_Name: 1 Farm
   m_EditorClassIdentifier: 
+  prefab: {fileID: 7077672549755597519, guid: 603308893babf2c49abef46baa0dc02c, type: 3}
   product_gold: 0
   product_metal: 0
   product_food: 5
@@ -19,6 +20,8 @@ MonoBehaviour:
   growth_rating: 0
   jobs: 100
   housing: 0
+  spawnUnit: {fileID: 0}
+  spawnCount: 1
   cost_gold: 100
   cost_metal: 0
   cost_food: 0

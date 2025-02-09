@@ -304,6 +304,13 @@ public class GM : Singleton<GM>
         if (food < buildingInfo.cost_food) return false;
         return true;
     }
+    public bool CheckRes(int idx)
+    {
+        if (gold < BuildingManager.Instance.buildingInfos[idx].cost_gold) return false;
+        if (metal < BuildingManager.Instance.buildingInfos[idx].cost_metal) return false;
+        if (food < BuildingManager.Instance.buildingInfos[idx].cost_food) return false;
+        return true;
+    }
     public bool PayRes(BuildingInfo buildingInfo)
     {
         if (CheckRes(buildingInfo))
