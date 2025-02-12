@@ -8,7 +8,7 @@ public class RTSTimedDestruction : MonoBehaviour
 	// Use this for initialization
 	IEnumerator Start()
 	{
-		yield return new WaitForSeconds(time);
+		yield return CoroutineHelper.WaitForSeconds(time);
 		GameObject.Destroy(gameObject);
 	}
 }

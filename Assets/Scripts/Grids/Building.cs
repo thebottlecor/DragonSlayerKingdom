@@ -9,14 +9,16 @@ public class Building : MonoBehaviour
     public bool Placed { get; private set; }
     public BoundsInt area;
 
-    public SpriteRenderer sprite;
-    private Color baseColor;
+    public Transform center;
+    public SpriteRenderer[] sprites;
+    private Color[] baseColors;
 
     public enum CannotBuild
     {
         okay,
         wrong_position,
         short_resource,
+        short_housing,
     }
 
     public void Set_Idx(int idx)
@@ -26,11 +28,14 @@ public class Building : MonoBehaviour
 
     public void Init()
     {
-        baseColor = sprite.color;
-        Color tempColor = baseColor;
-        tempColor.a = 0.7f;
-
-        sprite.color = tempColor;
+        baseColors = new Color[sprites.Length];
+        for (int i = 0; i < baseColors.Length; i++)
+        {
+            baseColors[i] = sprites[i].color;
+            Color tempColor = baseColors[i];
+            tempColor.a = 0.7f;
+            sprites[i].color = tempColor;
+        }
     }
 
     public CannotBuild CanBePlaced()
@@ -42,6 +47,10 @@ public class Building : MonoBehaviour
         if (!GM.Instance.CheckRes(idx))
         {
             return CannotBuild.short_resource;
+        }
+        if (!GM.Instance.CheckHousing(idx))
+        {
+            return CannotBuild.short_housing;
         }
 
         if (!GridBuildingSystem.Instance.CanTakeArea(areaTemp))
@@ -61,7 +70,10 @@ public class Building : MonoBehaviour
             areaTemp.position = positionInt;
 
             Placed = true;
-            sprite.color = baseColor;
+            for (int i = 0; i < baseColors.Length; i++)
+            {
+                sprites[i].color = baseColors[i];
+            }
 
             GridBuildingSystem.Instance.TakeArea(areaTemp);
         }

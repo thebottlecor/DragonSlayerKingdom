@@ -8,7 +8,7 @@ using System.Linq;
 public class BuildingManager : Singleton<BuildingManager>
 {
     [Serializable]
-    public struct StateInfo
+    public struct ProductInfo
     {
 
         public float product_gold;
@@ -20,10 +20,8 @@ public class BuildingManager : Singleton<BuildingManager>
         public float growth_rating;
         public int growth_pop;
 
-        public int jobs;
-        public int unemployed;
+        public int housingUse;
         public int housing;
-        public int emptyHousing;
     }
 
     [Header("설정값")]
@@ -31,8 +29,8 @@ public class BuildingManager : Singleton<BuildingManager>
     public float baseGrowthRating = 0.01f;
 
     [Header("게임 변수")]
-    public StateInfo infos;
-    public List<int> stateBuildings;
+    public ProductInfo productInfos;
+    public List<int> hasBuildings;
 
     public Queue<BuildingQueueInfo> buildingQueue;
     [Serializable]
@@ -50,7 +48,7 @@ public class BuildingManager : Singleton<BuildingManager>
     public int total_pop;
     public int total_growth_pop;
     public int total_housing;
-    public int total_unemployed;
+    public int total_housingUse;
 
     public List<Building> playerBuildings;
     public List<SpawnInfo> spawnPool_up;
@@ -67,6 +65,9 @@ public class BuildingManager : Singleton<BuildingManager>
         public int count;
     }
 
+    // 특정 시간마다 더해지는 주기당 보너스 골드
+    public float bonus_gold;
+
 
     protected override void Awake()
     {
@@ -82,12 +83,12 @@ public class BuildingManager : Singleton<BuildingManager>
 
     private void Start()
     {
-        infos = new StateInfo();
+        productInfos = new ProductInfo();
 
-        stateBuildings = new List<int>();
+        hasBuildings = new List<int>();
         for (int n = 0; n < buildingInfos.Length; n++)
         {
-            stateBuildings.Add(0);
+            hasBuildings.Add(0);
         }
 
         buildingQueue = new Queue<BuildingQueueInfo>();
@@ -96,9 +97,9 @@ public class BuildingManager : Singleton<BuildingManager>
         // 임시 초기 설정
         var temp = Instantiate(buildingInfos[0].prefab, Vector3.zero, Quaternion.identity);
         temp.Init();
-        temp.transform.position = new Vector3(-100.125f, -98.375f, 0f);
+        temp.transform.position = new Vector3(-100.125f, 1.625f, 0f);
         temp.Place();
-        infos.pop = 1000;
+        productInfos.pop = 1000;
 
         YieldState(false);
     }
@@ -150,14 +151,14 @@ public class BuildingManager : Singleton<BuildingManager>
 
     public void BuildSomething(int buildingIdx, int count = 1)
     {
-        stateBuildings[buildingIdx] += count;
+        hasBuildings[buildingIdx] += count;
         //CalcState(stateIdx);
         YieldState(false);
     }
 
     public void CalcState()
     {
-        StateInfo temp = infos;
+        ProductInfo temp = productInfos;
 
         float product_gold = 0;
         float product_metal = 0;
@@ -168,9 +169,9 @@ public class BuildingManager : Singleton<BuildingManager>
         int jobs = 0;
         int housing = 0;
 
-        for (int i = 0; i < stateBuildings.Count; i++)
+        for (int i = 0; i < hasBuildings.Count; i++)
         {
-            int count = stateBuildings[i];
+            int count = hasBuildings[i];
             var stat = buildingInfos[i];
 
             product_gold += stat.product_gold * count;
@@ -179,7 +180,7 @@ public class BuildingManager : Singleton<BuildingManager>
             product_research += stat.product_research * count;
 
             growth_rating += stat.growth_rating * count;
-            jobs += stat.jobs * count;
+            jobs += stat.housingUse * count;
             housing += stat.housing * count;
         }
 
@@ -188,38 +189,24 @@ public class BuildingManager : Singleton<BuildingManager>
         temp.product_food = product_food;
         temp.product_research = product_research;
 
-        temp.jobs = jobs;
+        temp.housingUse = jobs;
         temp.housing = housing;
 
-        int unemployed = temp.pop - temp.jobs;
-        temp.unemployed = unemployed;
-
-        int emptyHousing = temp.housing - temp.pop;
-        temp.emptyHousing = emptyHousing;
-
         float calcGrowthRating = baseGrowthRating + growth_rating;
-        if (emptyHousing <= 0)
-        {
-            calcGrowthRating *= 0.5f;
-        }
-        if (unemployed > 0)
-        {
-            calcGrowthRating *= 0.5f;
-        }
         temp.growth_rating = calcGrowthRating;
 
         float growth_pop = temp.pop * calcGrowthRating;
         growth_pop = Mathf.Max(growth_pop, 1f);
         temp.growth_pop = (int)growth_pop;
 
-        infos = temp;
+        productInfos = temp;
     }
 
     public void AddPop()
     {
-        StateInfo temp = infos;
+        ProductInfo temp = productInfos;
         temp.pop += temp.growth_pop;
-        infos = temp;
+        productInfos = temp;
     }
 
 
@@ -232,21 +219,23 @@ public class BuildingManager : Singleton<BuildingManager>
         total_pop = 0;
         total_growth_pop = 0;
         total_housing = 0;
-        total_unemployed = 0;
+        total_housingUse = 0;
 
         CalcState();
         if (addRes)
             AddPop();
 
-        total_product_gold += infos.product_gold;
-        total_product_metal += infos.product_metal;
-        total_product_food += infos.product_food;
-        total_product_research += infos.product_research;
+        total_product_gold += productInfos.product_gold;
+        total_product_metal += productInfos.product_metal;
+        total_product_food += productInfos.product_food;
+        total_product_research += productInfos.product_research;
 
-        total_pop += infos.pop;
-        total_growth_pop += infos.growth_pop;
-        total_housing += infos.housing;
-        total_unemployed += infos.unemployed;
+        total_product_gold += bonus_gold;
+
+        total_pop += productInfos.pop;
+        total_growth_pop += productInfos.growth_pop;
+        total_housing += productInfos.housing;
+        total_housingUse += productInfos.housingUse;
 
         if (addRes)
         {
@@ -257,8 +246,7 @@ public class BuildingManager : Singleton<BuildingManager>
         GM.Instance.CalcResearch(total_product_research);
 
         GM.Instance.CalcPop(total_pop);
-        GM.Instance.CalcHousing(total_housing);
-        GM.Instance.CalcUnemployed(-1 * total_unemployed);
+        GM.Instance.CalcHousing(total_housing, total_housingUse);
     }
 
     public bool AddPlayerBuilding(Building building)
@@ -306,7 +294,7 @@ public class BuildingManager : Singleton<BuildingManager>
             int count = buildingInfos[playerBuildings[i].idx].spawnCount;
             if (su != null)
             {
-                Vector3 pos = playerBuildings[i].sprite.transform.position;
+                Vector3 pos = playerBuildings[i].center.position;
                 SpawnInfo spawnInfo = new SpawnInfo
                 {
                     sourcePos = pos,
@@ -314,11 +302,11 @@ public class BuildingManager : Singleton<BuildingManager>
                     count = count,
                 };
 
-                if (pos.y >= -98f)
+                if (pos.y >= 2f)
                 {
                     spawnPool_up.Add(spawnInfo);
                 }
-                else if (pos.y > -98.5f)
+                else if (pos.y > 1.5f)
                 {
                     spawnPool.Add(spawnInfo);
                 }

@@ -17,6 +17,8 @@ public class RTSUnit : VersionedMonoBehaviour
 	public float detectionRange;
 
 	public float maxHealth;
+	//public float gold = 10f;
+	public float exp = 1f;
 
 	public enum Type
 	{
@@ -41,8 +43,6 @@ public class RTSUnit : VersionedMonoBehaviour
 	RTSWeapon weapon;
 	float lastSeenAttackTarget = float.NegativeInfinity;
 	bool reachedDestination;
-	public int storedCrystals;
-	public RTSUnit reservedBy;
 	public bool locked;
 	new Transform transform;
 
@@ -133,6 +133,7 @@ public class RTSUnit : VersionedMonoBehaviour
 		ai = GetComponent<IAstarAI>();
 		//rvo = GetComponent<RVOController>();
 		rvo = GetComponent<FollowerEntity>();
+		
 		weapon = GetComponent<RTSWeapon>();
 	}
 
@@ -231,7 +232,8 @@ public class RTSUnit : VersionedMonoBehaviour
 		else
 		{
 			//rvo.locked = false | locked;
-			rvo.rvoSettings.locked = false | locked;
+			if (rvo != null)
+				rvo.rvoSettings.locked = false | locked;
 
 			// this.reachedDestination will be true once the AI has reached its destination
 			// and it will stay true until the next time SetDestination is called.
@@ -300,7 +302,8 @@ public class RTSUnit : VersionedMonoBehaviour
 					if (!weapon.canMoveWhileAttacking && (wantsToAttack || weapon.isAttacking))
 					{
 						//rvo.locked = true;
-						rvo.rvoSettings.locked = true;
+						if (rvo != null)
+							rvo.rvoSettings.locked = true;
 					}
 				}
 			}
@@ -321,6 +324,14 @@ public class RTSUnit : VersionedMonoBehaviour
 	IEnumerator DieCoroutine()
 	{
 		yield return new WaitForEndOfFrame();
+		if (team == 2)
+		{
+			//if (gold > 0)
+			//	GM.Instance.AddGold(gold);
+
+			if (exp > 0f)
+				GM.Instance.AddExp(exp);
+		}
 		if (deathEffect != null) GameObject.Instantiate(deathEffect, transform.position, transform.rotation);
 		GameObject.Destroy(gameObject);
 	}

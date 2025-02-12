@@ -163,10 +163,14 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
 
                     if (others.collider != null)
                     {
-                        removeTemp = others.collider.GetComponent<Building>();
-                        removeCastingBar.value = 0f;
-                        removeTimer = 0f;
-                        removeCastingBar.gameObject.SetActive(true);
+                        var b = others.collider.GetComponent<Building>();
+                        if (!BuildingManager.Instance.buildingInfos[b.idx].indestructible)
+                        {
+                            removeTemp = b;
+                            removeCastingBar.value = 0f;
+                            removeTimer = 0f;
+                            removeCastingBar.gameObject.SetActive(true);
+                        }
                     }
                 }
             }
@@ -221,6 +225,8 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
                 case Building.CannotBuild.wrong_position:
                     break;
                 case Building.CannotBuild.short_resource:
+                    break;
+                case Building.CannotBuild.short_housing:
                     break;
             }
         }

@@ -4,6 +4,7 @@ using TMPro;
 using DG.Tweening;
 using AYellowpaper.SerializedCollections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class GM : Singleton<GM>
 {
@@ -20,12 +21,10 @@ public class GM : Singleton<GM>
 
     // 계산된 결과형 변수 (각각의 주 값을 합산)
     public int pop;
-    public int unemployed;
+    public int housingUse;
     public int housing;
 
     private int displayPop;
-    private int displayUnemployed;
-    private int displayHousing;
 
     public TextMeshProUGUI[] goldTexts;
     public TextMeshProUGUI[] metalTexts;
@@ -33,9 +32,9 @@ public class GM : Singleton<GM>
     public TextMeshProUGUI[] researchTexts;
 
     public TextMeshProUGUI[] popTexts;
-    public TextMeshProUGUI[] unemployedTexts;
     public TextMeshProUGUI[] housingTexts;
 
+    [Space(20f)]
     public RTSUnit[] walls;
     // 계산된 결과
     public int wallHpMax;
@@ -44,18 +43,27 @@ public class GM : Singleton<GM>
     public TextMeshProUGUI wallHpText;
     public Slider wallHpSlider;
 
+    [Space(20f)]
+    public float exp;
+    public Slider expSilder;
+    public int level;
+    public TextMeshProUGUI expText;
+    [SerializedDictionary("레벨", "필요누적EXP")]
+    public List<float> levelExp;
+
     private void Start()
     {
-        // 테스트
-        SetGold(500);
-        SetMetal(500);
-        SetFood(500);
+        //// 테스트
+        SetGold(60f);
+        SetMetal(0);
+        SetFood(0);
         SetResearch(0);
+        SetExp(0);
 
-        // 테스트2
-        SetPop(0);
-        SetUnemployed(0);
-        SetHousing(0);
+        //// 테스트2
+        //SetPop(0);
+        //SetUnemployed(0);
+        //SetHousing(0);
 
         StartCoroutine(Delay());
     }
@@ -68,7 +76,7 @@ public class GM : Singleton<GM>
 
         yield return new WaitForSeconds(1f);
 
-        AddGold(1000);
+        //AddGold(1000);
     }
 
 
@@ -110,7 +118,7 @@ public class GM : Singleton<GM>
         float target = metal + value;
         DOVirtual.Float(metal, target, 0.75f, (x) =>
         {
-            displayMetal = x;
+            displayMetal = x; 
             ShowMetalText();
         }).SetEase(Ease.OutCirc).SetUpdate(true);
         metal = target;
@@ -233,66 +241,25 @@ public class GM : Singleton<GM>
         ShowPopText();
     }
 
-    public void CalcUnemployed(int target) // 실제로 일자리 여유분을 나타냄
+    public void CalcHousing(int housing, int housingUse)
     {
-        DOVirtual.Int(unemployed, target, 0.75f, (x) =>
-        {
-            displayUnemployed = x;
-            ShowUnemployedText();
-        }).SetEase(Ease.OutCirc).SetUpdate(true);
-        unemployed = target;
-    }
-
-    private void ShowUnemployedText()
-    {
-        string str;
-        if (displayUnemployed < 0)
-            str = $"<color=#A91111>{displayUnemployed}</color>";
-        else
-            str = $"{displayUnemployed}";
-
-        for (int i = 0; i < unemployedTexts.Length; i++)
-        {
-            unemployedTexts[i].text = str;
-        }
-    }
-
-    public void SetUnemployed(int value)
-    {
-        displayUnemployed = value;
-        unemployed = value;
-        ShowUnemployedText();
-    }
-
-    public void CalcHousing(int target)
-    {
-        DOVirtual.Int(housing, target, 0.75f, (x) =>
-        {
-            displayHousing = x;
-            ShowHousingText();
-        }).SetEase(Ease.OutCirc).SetUpdate(true);
-        housing = target;
+        this.housing = housing;
+        this.housingUse = housingUse;
+        ShowHousingText();
     }
 
     private void ShowHousingText()
     {
         string str;
-        if (displayHousing < 0)
-            str = $"<color=#A91111>{displayHousing}</color>";
+        if (housingUse >= housing)
+            str = $"<color=#A91111>{housingUse} / {housing}</color>";
         else
-            str = $"{displayHousing}";
+            str = $"{housingUse} / {housing}";
 
         for (int i = 0; i < housingTexts.Length; i++)
         {
             housingTexts[i].text = str;
         }
-    }
-
-    public void SetHousing(int value)
-    {
-        displayHousing = value;
-        housing = value;
-        ShowHousingText();
     }
     #endregion
 
@@ -311,9 +278,19 @@ public class GM : Singleton<GM>
         if (food < BuildingManager.Instance.buildingInfos[idx].cost_food) return false;
         return true;
     }
+    public bool CheckHousing(BuildingInfo buildingInfo)
+    {
+        if (housing + buildingInfo.housing < buildingInfo.housingUse + housingUse) return false;
+        return true;
+    }
+    public bool CheckHousing(int idx)
+    {
+        if (housing + BuildingManager.Instance.buildingInfos[idx].housing < BuildingManager.Instance.buildingInfos[idx].housingUse + housingUse) return false;
+        return true;
+    }
     public bool PayRes(BuildingInfo buildingInfo)
     {
-        if (CheckRes(buildingInfo))
+        if (CheckRes(buildingInfo) && CheckHousing(buildingInfo))
         {
             AddGold(-1 * buildingInfo.cost_gold);
             AddMetal(-1 * buildingInfo.cost_metal);
@@ -360,6 +337,62 @@ public class GM : Singleton<GM>
         wallHpSlider.value = percent;
         wallHpText.text = displayWallHp.ToString();
     }
+    #endregion
 
+    #region 레벨
+    public void SetExp(float value)
+    {
+        exp = value;
+        ShowExpText();
+    }
+    public void AddExp(float addedExp)
+    {
+        exp += addedExp;
+        int currentLevel = level;
+
+        for (int i = currentLevel; i < levelExp.Count; i++)
+        {
+            if (exp >= levelExp[i])
+            {
+                level = i + 1;
+            }
+        }
+
+        int levelUpCount = level - currentLevel;
+        if (levelUpCount > 0)
+        {
+            // 레벨업함
+            Debug.Log("Level ++ " + level);
+
+            UIManager.Instance.OpenLevelUpPanel();
+
+        }
+        ShowExpText();
+    }
+
+    private void ShowExpText()
+    {
+        if (level < levelExp.Count)
+        {
+            if (level > 0)
+            {
+                float prevExp = levelExp[level - 1];
+                float percent = (exp - prevExp) / (levelExp[level] - prevExp);
+                expSilder.value = percent;
+                expText.text = $"Lv.{level + 1}  {exp - prevExp:F0}/{levelExp[level] - prevExp:F0}";
+            }
+            else
+            {
+                float percent = exp / levelExp[level];
+                expSilder.value = percent;
+                expText.text = $"Lv.{level + 1}  {exp:F0}/{levelExp[level]:F0}";
+            }
+        }
+        else
+        {
+            expSilder.value = 1f;
+            expText.text = "Lv.Max";
+        }
+    }
     #endregion
 }

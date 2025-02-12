@@ -9,7 +9,8 @@ using System.Text.RegularExpressions;
 public class BuildingInfo : ScriptableObject
 {
     public Building prefab;
-    
+    public bool indestructible;
+
     [Header("속성")]
     public float product_gold;
     public float product_metal;
@@ -18,7 +19,7 @@ public class BuildingInfo : ScriptableObject
 
     public float growth_rating;
 
-    public int jobs;
+    public int housingUse;
     public int housing;
 
     [Header("스폰")]

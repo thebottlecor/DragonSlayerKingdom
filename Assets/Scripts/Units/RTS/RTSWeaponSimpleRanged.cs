@@ -35,10 +35,30 @@ public class RTSWeaponSimpleRanged : RTSWeapon
 	public override void Attack(RTSUnit target)
 	{
 		base.Attack(target);
+
+		if (!ranged)
+		{
+			AttackApply(target);
+		}
+	}
+
+	private void AttackApply(RTSUnit target)
+    {
 		if (sfx.Length > 0) AudioSource.PlayClipAtPoint(sfx[Random.Range(0, sfx.Length)], transform.position, volume);
 		if (sourceEffect != null) GameObject.Instantiate(sourceEffect, sourceEffectRoot != null ? sourceEffectRoot.position : transform.position, sourceEffectRoot != null ? sourceEffectRoot.rotation : Quaternion.LookRotation(target.transform.position - transform.position, Vector3.up));
 		if (targetEffect != null) GameObject.Instantiate(targetEffect, target.transform.position, Quaternion.LookRotation(transform.position - target.transform.position, Vector3.up));
 
 		target.ApplyDamage(damage);
+	}
+
+    public override void ProjectileHit(Transform target)
+    {
+        base.ProjectileHit(target);
+
+		if (target != null)
+		{
+			RTSUnit trueTarget = target.GetComponent<RTSUnit>();
+			AttackApply(trueTarget);
+		}
 	}
 }

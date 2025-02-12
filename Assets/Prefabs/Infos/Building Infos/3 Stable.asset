@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25d17aa1ab0772469bb7ad964bf5875, type: 3}
+  m_Name: 3 Stable
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7077672549755597519, guid: d3d4a634f92e60e4dae3b2d2b6c52d7e, type: 3}
+  indestructible: 0
+  product_gold: 0
+  product_metal: 0
+  product_food: 0
+  product_research: 0
+  growth_rating: 0
+  housingUse: 2
+  housing: 0
+  spawnUnit: {fileID: 1193898552716581225, guid: c2f5d79f6513c6e49a449f6b0a41c1c2, type: 3}
+  spawnCount: 1
+  cost_gold: 20
+  cost_metal: 0
+  cost_food: 120
+  build_time: 10

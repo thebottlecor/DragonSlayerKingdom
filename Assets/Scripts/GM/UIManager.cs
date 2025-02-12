@@ -14,8 +14,9 @@ public class UIManager : Singleton<UIManager>
     [Header("연구 정보")]
     public GameObject researchPanel;
 
-    [SerializedDictionary("이게뭐여?", "이것은 말이지")]
-    public SerializedDictionary<int, string> ElementDescriptions;
+    [Header("레벨업 정보")]
+    public GameObject levelUpPanel;
+    public PerkSelectUI[] perkSelectUIs;
 
     private void Start()
     {
@@ -67,5 +68,27 @@ public class UIManager : Singleton<UIManager>
     public void CloseResearchPanel()
     {
         researchPanel.SetActive(false);
+    }
+
+    public void OpenLevelUpPanel()
+    {
+        for (int i = 0; i < perkSelectUIs.Length; i++)
+        {
+            perkSelectUIs[i].Init(0);
+        }
+
+        levelUpPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void SelectPerks(int idx)
+    {
+        // 퍽 효과 적용
+
+        CloseLevelUpPanel();
+    }
+    public void CloseLevelUpPanel()
+    {
+        levelUpPanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
