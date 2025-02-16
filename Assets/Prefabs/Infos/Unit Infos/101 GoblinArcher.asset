@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a7fec462343104a8818a73728c6ba5, type: 3}
+  m_Name: 101 GoblinArcher
+  m_EditorClassIdentifier: 
+  idx: 101
+  prefab: {fileID: 5672633102786846993, guid: 33a0c0940a5927c44b323b6bfa2b4588, type: 3}
+  deathEffect: {fileID: 0}
+  type: 0
+  exp: 1
+  detectionRange: 2
+  rangeFuzz: 0
+  detectionRangeSquare: 0
+  maxHealth: 20
+  initSkills: 
+  maxTarget: 1
+  moveSpeed: 0.16
+  ranged: 1
+  damageType: 1
+  projectilePrefab: {fileID: 38708408900081288, guid: 17739307a4db7be4e9951aa022f3b0d2, type: 3}
+  projectileMaxMoveSpeed: 0.8
+  projectileMaxHeight: 0.15
+  trajectoryAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.9238045
+      outSlope: 1.9238045
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.08370767
+    - serializedVersion: 3
+      time: 0.5053078
+      value: 0.98578
+      inSlope: 0.000599642
+      outSlope: 0.000599642
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.21033697
+    - serializedVersion: 3
+      time: 0.98977655
+      value: 0.000015761703
+      inSlope: -2.2897189
+      outSlope: -2.2897189
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.062862165
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  axisCorrectionAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  projectileSpeedAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.2070368
+      outSlope: -0.2070368
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.33107692
+      value: 0.9314549
+      inSlope: -0.05228298
+      outSlope: -0.05228298
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.10247083
+      outSlope: 0.10247083
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  damage: 10
+  range: 0.9
+  cooldown: 1
+  attackDuration: 0.5
+  canMoveWhileAttacking: 0
+  sourceEffect: {fileID: 0}
+  targetEffect: {fileID: 173668, guid: 0d7fce9b667fc9e4b9b65c50ea285ae1, type: 3}
+  sfx: []
+  volume: 1

@@ -9,7 +9,7 @@ public class RTSManager : MonoBehaviour
 	[UnityEngine.Serialization.FormerlySerializedAs("audio")]
 	public RTSAudio audioManager;
 
-	RTSPlayer[] players;
+	public const int PlayerCount = 3;
 
 	private void Awake()
 	{
@@ -17,25 +17,11 @@ public class RTSManager : MonoBehaviour
 		instance = this;
 
 		units = new RTSUnitManager();
-
-		players = new RTSPlayer[3];
-		for (int i = 0; i < players.Length; i++)
-		{
-			players[i] = new RTSPlayer();
-			players[i].index = i;
-		}
 	}
 
 	void OnDestroy()
 	{
 		units.OnDestroy();
 		instance = null;
-	}
-
-	public int PlayerCount => players.Length;
-
-	public RTSPlayer GetPlayer(int team)
-	{
-		return players[team];
 	}
 }

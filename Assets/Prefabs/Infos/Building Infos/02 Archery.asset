@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25d17aa1ab0772469bb7ad964bf5875, type: 3}
+  m_Name: 02 Archery
+  m_EditorClassIdentifier: 
+  idx: 2
+  prefab: {fileID: 7077672549755597519, guid: 915bbbe11712dd04b8f929226589a1d7, type: 3}
+  indestructible: 0
+  product_gold: 0
+  product_metal: 0
+  product_food: 0
+  product_research: 0
+  growth_rating: 0
+  housingUse: 1
+  housing: 0
+  spawnUnit: {fileID: 1193898552716581225, guid: 9ed5cd6a3a0a3354db89bb17302e6c9b, type: 3}
+  spawnCount: 1
+  cost_gold: 10
+  cost_metal: 0
+  cost_food: 70
+  build_time: 10

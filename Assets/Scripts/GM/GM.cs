@@ -273,9 +273,10 @@ public class GM : Singleton<GM>
     }
     public bool CheckRes(int idx)
     {
-        if (gold < BuildingManager.Instance.buildingInfos[idx].cost_gold) return false;
-        if (metal < BuildingManager.Instance.buildingInfos[idx].cost_metal) return false;
-        if (food < BuildingManager.Instance.buildingInfos[idx].cost_food) return false;
+        var buildingInfos = DataManager.Instance.buildings;
+        if (gold < buildingInfos[idx].cost_gold) return false;
+        if (metal < buildingInfos[idx].cost_metal) return false;
+        if (food < buildingInfos[idx].cost_food) return false;
         return true;
     }
     public bool CheckHousing(BuildingInfo buildingInfo)
@@ -285,7 +286,8 @@ public class GM : Singleton<GM>
     }
     public bool CheckHousing(int idx)
     {
-        if (housing + BuildingManager.Instance.buildingInfos[idx].housing < BuildingManager.Instance.buildingInfos[idx].housingUse + housingUse) return false;
+        var buildingInfos = DataManager.Instance.buildings;
+        if (housing + buildingInfos[idx].housing < housingUse + buildingInfos[idx].housingUse) return false;
         return true;
     }
     public bool PayRes(BuildingInfo buildingInfo)
@@ -314,8 +316,8 @@ public class GM : Singleton<GM>
         float targetMax = 0;
         for (int i = 0; i < walls.Length; i++)
         {
-            target += walls[i].health;
-            targetMax += walls[i].maxHealth;
+            target += walls[i].currentHealth;
+            targetMax += walls[i].Info.MaxHealth;
         }
 
         int targetHp = (int)target;

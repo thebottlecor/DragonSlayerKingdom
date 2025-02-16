@@ -85,7 +85,7 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
         }
         mainTilemap.gameObject.SetActive(true);
 
-        temp = Instantiate(BuildingManager.Instance.buildingInfos[idx].prefab, Vector3.zero, Quaternion.identity);
+        temp = Instantiate(BuildingManager.Instance.BuildingInfos[idx].prefab, Vector3.zero, Quaternion.identity);
         temp.Init();
         FollowBuilding();
     }
@@ -164,7 +164,7 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
                     if (others.collider != null)
                     {
                         var b = others.collider.GetComponent<Building>();
-                        if (!BuildingManager.Instance.buildingInfos[b.idx].indestructible)
+                        if (!BuildingManager.Instance.BuildingInfos[b.idx].indestructible)
                         {
                             removeTemp = b;
                             removeCastingBar.value = 0f;
@@ -183,7 +183,7 @@ public class GridBuildingSystem : Singleton<GridBuildingSystem>
 
                     if (removeTimer >= removeTime)
                     {
-                        removeTemp.Remove();
+                        removeTemp.ReturnAndRemove();
                         removeCastingBar.gameObject.SetActive(false);
                         removeTemp = null;
                     }

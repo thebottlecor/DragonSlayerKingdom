@@ -3,52 +3,31 @@ using System.Collections;
 
 public class RTSWeaponSimpleRanged : RTSWeapon
 {
-	public GameObject sourceEffect;
-	public GameObject targetEffect;
-
 	public Transform sourceEffectRoot;
-
-	public float rotationSpeed;
-	public Transform rotationRootY;
-
-	public float damage;
-	public AudioClip[] sfx;
-	public float volume = 1f;
 
 	public override bool Aim(RTSUnit target)
 	{
-		bool rotationDone = true;
-
-		if (rotationRootY != null)
-		{
-			var dir = target.transform.position - rotationRootY.position;
-			dir.y = 0;
-
-			var targetRot = Quaternion.LookRotation(dir);
-			rotationRootY.rotation = Quaternion.RotateTowards(rotationRootY.rotation, targetRot, rotationSpeed * Time.deltaTime);
-
-			rotationDone = Quaternion.Angle(targetRot, rotationRootY.rotation) < rotationSpeed * 0.1f;
-		}
-		return base.Aim(target) && rotationDone;
+		return base.Aim(target);
 	}
 
 	public override void Attack(RTSUnit target)
 	{
 		base.Attack(target);
 
-		if (!ranged)
+		if (!unit.Info.ranged)
 		{
 			AttackApply(target);
 		}
 	}
 
 	private void AttackApply(RTSUnit target)
-    {
-		if (sfx.Length > 0) AudioSource.PlayClipAtPoint(sfx[Random.Range(0, sfx.Length)], transform.position, volume);
-		if (sourceEffect != null) GameObject.Instantiate(sourceEffect, sourceEffectRoot != null ? sourceEffectRoot.position : transform.position, sourceEffectRoot != null ? sourceEffectRoot.rotation : Quaternion.LookRotation(target.transform.position - transform.position, Vector3.up));
-		if (targetEffect != null) GameObject.Instantiate(targetEffect, target.transform.position, Quaternion.LookRotation(transform.position - target.transform.position, Vector3.up));
+	{
+		var info = unit.Info;
+		if (info.sfx.Length > 0) AudioSource.PlayClipAtPoint(info.sfx[Random.Range(0, info.sfx.Length)], transform.position, info.volume);
+		if (info.sourceEffect != null) GameObject.Instantiate(info.sourceEffect, sourceEffectRoot != null ? sourceEffectRoot.position : transform.position, sourceEffectRoot != null ? sourceEffectRoot.rotation : Quaternion.LookRotation(target.transform.position - transform.position, Vector3.up));
+		if (info.targetEffect != null) GameObject.Instantiate(info.targetEffect, target.transform.position, Quaternion.LookRotation(transform.position - target.transform.position, Vector3.up));
 
-		target.ApplyDamage(damage);
+		target.ApplyDamage(info.Damage, unit.Info.damageType);
 	}
 
     public override void ProjectileHit(Transform target)

@@ -26,11 +26,13 @@ public class PerkSelectUI : MonoBehaviour
 
     public void UpdateUI()
     {
-
+        icon.sprite = DataManager.Instance.perks[showingIdx].icon;
+        description.text = showingIdx.ToString();
     }
 
     public void SelectThis()
     {
-        UIManager.Instance.SelectPerks(showingIdx);
+        PerkManager.Instance.AddPerk(showingIdx);
+        UIManager.Instance.SelectPerks();
     }
 }

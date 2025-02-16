@@ -11,34 +11,17 @@ using Pathfinding.Pooling;
 
 public class RTSUnit : VersionedMonoBehaviour
 {
-	public GameObject selectionIndicator;
-	public GameObject deathEffect;
+	public UnitIdx idx;
 	public int team;
-	public float detectionRange;
 
-	public float maxHealth;
-	//public float gold = 10f;
-	public float exp = 1f;
+	private Skill_Charge skill_Charge;
 
-	public enum Type
-	{
-		Infantry,
-		Heavy,
-		Worker,
-		Harvester,
-		Wall,
-
-		HarvesterDropoff = 100,
-		HarvesterDropoffQueue,
-		ResourceCrystal = 200,
-	}
-
-	public Type type;
-	public float health;
+	public float currentHealth;
 	IAstarAI ai;
 	FollowerEntity rvo;
 	MovementMode movementMode;
 	Vector3 lastDestination;
+
 	RTSUnit attackTarget;
 	RTSWeapon weapon;
 	float lastSeenAttackTarget = float.NegativeInfinity;
@@ -50,63 +33,15 @@ public class RTSUnit : VersionedMonoBehaviour
 
 	/// <summary>Position at the start of the current frame</summary>
 	protected Vector3 position;
+	public UnitInfo Info => DataManager.Instance.units[idx];
+	public HashSet<Skill> SkillSet => PerkManager.Instance.unitHasSkills[idx];
 
-	public System.Action<bool> onMakeActiveUnit;
-
-	public RTSPlayer owner
-	{
-		get
-		{
-			return RTSManager.instance.GetPlayer(team);
-		}
-	}
-
-	public bool selectionIndicatorEnabled
-	{
-		get
-		{
-			if (selectionIndicator == null) return false;
-			return selectionIndicator.activeSelf;
-		}
-		set
-		{
-			if (selectionIndicator != null) selectionIndicator.SetActive(value);
-		}
-	}
-
-	public float radius
+	public float Radius
 	{
 		get
 		{
 			return rvo != null ? rvo.radius : 1f;
 		}
-	}
-
-	bool mSelected;
-	public bool selected
-	{
-		get
-		{
-			return mSelected;
-		}
-		set
-		{
-			mSelected = value;
-			selectionIndicatorEnabled = value;
-			if (value)
-			{
-				RTSManager.instance.units.OnSelected(this);
-			}
-			else
-			{
-				RTSManager.instance.units.OnDeselected(this);
-			}
-		}
-	}
-
-	public void OnMakeActiveUnit(bool active)
-	{
-		if (onMakeActiveUnit != null) onMakeActiveUnit(active);
 	}
 
 	public void SetDestination(Vector3 destination, MovementMode mode)
@@ -126,6 +61,10 @@ public class RTSUnit : VersionedMonoBehaviour
 		}
 	}
 
+	public void Set_Idx(UnitIdx idx)
+    {
+		this.idx = idx;
+    }
 	protected override void Awake()
 	{
 		base.Awake();
@@ -136,14 +75,19 @@ public class RTSUnit : VersionedMonoBehaviour
 		
 		weapon = GetComponent<RTSWeapon>();
 	}
+    private void Start()
+    {
+		if (ai != null)
+			ai.maxSpeed = Info.MoveSpeed;
+	}
 
-	static System.Action<RTSUnit[], int> OnUpdateDelegate;
+    static System.Action<RTSUnit[], int> OnUpdateDelegate;
 	void OnEnable()
 	{
 		if (OnUpdateDelegate == null) OnUpdateDelegate = OnUpdate;
 		RTSManager.instance.units.AddUnit(this);
-		selected = false;
-		health = maxHealth;
+		if (DataManager.Instance != null)
+			currentHealth = Info.MaxHealth;
 		movementMode = MovementMode.AttackMove;
 		reachedDestination = true;
 		if (ai != null) lastDestination = ai.destination;
@@ -159,7 +103,7 @@ public class RTSUnit : VersionedMonoBehaviour
 	static void OnUpdate(RTSUnit[] units, int count)
 	{
 		// Get some lists and arrays from an object pool
-		List<RTSUnit>[] unitsByOwner = ArrayPool<List<RTSUnit>>.ClaimWithExactLength(RTSManager.instance.PlayerCount);
+		List<RTSUnit>[] unitsByOwner = ArrayPool<List<RTSUnit>>.ClaimWithExactLength(RTSManager.PlayerCount);
 		for (int i = 0; i < unitsByOwner.Length; i++)
 		{
 			unitsByOwner[i] = ListPool<RTSUnit>.Claim();
@@ -167,7 +111,7 @@ public class RTSUnit : VersionedMonoBehaviour
 		for (int i = 0; i < count; i++)
 		{
 			units[i].position = units[i].transform.position;
-			unitsByOwner[units[i].owner.index].Add(units[i]);
+			unitsByOwner[units[i].team].Add(units[i]);
 		}
 		for (int i = 0; i < count; i++)
 		{
@@ -190,41 +134,27 @@ public class RTSUnit : VersionedMonoBehaviour
 			// Stationary unit
 
 			if (weapon != null)
-			{
-				float minDist = detectionRange * detectionRange;
-				for (int player = 0; player < unitsByOwner.Length; player++)
-				{
-					if (!owner.IsHostile(RTSManager.instance.GetPlayer(player))) continue;
+            {
+                DetectEnemy(unitsByOwner);
 
-					for (int i = 0; i < unitsByOwner[player].Count; i++)
-					{
-						var unit = unitsByOwner[player][i];
-						var dist = (unit.position - position).sqrMagnitude;
-						if (dist < minDist)
-						{
-							attackTarget = unit;
-							minDist = dist;
-						}
-					}
-				}
+                if (attackTarget != null)
+                {
+                    if (!weapon.InRangeOf(attackTarget.position))
+                    {
+                        attackTarget = null;
+                    }
+                    else
+                    {
+                        if (weapon.Aim(attackTarget))
+                        {
+                            weapon.Attack(attackTarget);
+                            MultiAttack(unitsByOwner);
+                        }
+                    }
+                }
+            }
 
-				if (attackTarget != null)
-				{
-					if (!weapon.InRangeOf(attackTarget.position))
-					{
-						attackTarget = null;
-					}
-					else
-					{
-						if (weapon.Aim(attackTarget))
-						{
-							weapon.Attack(attackTarget);
-						}
-					}
-				}
-			}
-
-			if (attackTarget != null)
+            if (attackTarget != null)
 			{
 				lastSeenAttackTarget = Time.time;
 			}
@@ -248,30 +178,11 @@ public class RTSUnit : VersionedMonoBehaviour
 
 				if (canAttack)
 				{
-					float minDist = detectionRange * detectionRange;
+					//Profiler.BeginSample("Distance");
+					DetectEnemy(unitsByOwner);
+					//Profiler.EndSample();
 
-					Profiler.BeginSample("Distance");
-					var pos = position;
-					for (int player = 0; player < unitsByOwner.Length; player++)
-					{
-						if (!owner.IsHostile(RTSManager.instance.GetPlayer(player))) continue;
-
-						var enemies = unitsByOwner[player];
-						for (int i = 0; i < enemies.Count; i++)
-						{
-							var enemy = enemies[i];
-							var dist = (enemy.position - pos).sqrMagnitude;
-							if (dist < minDist)
-							{
-								attackTarget = enemy;
-								minDist = dist;
-							}
-						}
-					}
-					Profiler.EndSample();
-
-					float rangeFuzz = 1.1f;
-					if (attackTarget != null && (attackTarget.position - position).magnitude > detectionRange * rangeFuzz)
+					if (attackTarget != null && (attackTarget.position - position).magnitude > Info.rangeFuzz)
 					{
 						attackTarget = null;
 					}
@@ -283,13 +194,29 @@ public class RTSUnit : VersionedMonoBehaviour
 						if (!weapon.InRangeOf(attackTarget.position))
 						{
 							ai.destination = attackTarget.position;
+
+							if (SkillSet.Contains(Skill.Charge))
+							{
+								if (skill_Charge == null)
+									skill_Charge = gameObject.AddComponent<Skill_Charge>();
+								skill_Charge.Run(rvo);
+							}
 						}
 						else
 						{
 							wantsToAttack = true;
 							if (weapon.Aim(attackTarget))
 							{
+								if (SkillSet.Contains(Skill.DoubleShot))
+                                {
+									int random = UnityEngine.Random.Range(0, 10);
+									if (random <= 0)
+                                    {
+										StartCoroutine(DelayDoubleAttack());
+									}
+                                }
 								weapon.Attack(attackTarget);
+								MultiAttack(unitsByOwner);
 							}
 						}
 					}
@@ -299,7 +226,7 @@ public class RTSUnit : VersionedMonoBehaviour
 						lastSeenAttackTarget = Time.time;
 					}
 
-					if (!weapon.canMoveWhileAttacking && (wantsToAttack || weapon.isAttacking))
+					if (!Info.canMoveWhileAttacking && (wantsToAttack || weapon.IsAttacking))
 					{
 						//rvo.locked = true;
 						if (rvo != null)
@@ -316,6 +243,81 @@ public class RTSUnit : VersionedMonoBehaviour
 		}
 	}
 
+    private void DetectEnemy(List<RTSUnit>[] unitsByOwner)
+    {
+		float minDist = Info.detectionRangeSquare;
+        for (int player = 0; player < unitsByOwner.Length; player++)
+        {
+            if (team == player) continue;
+
+            var enemies = unitsByOwner[player];
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                var enemy = enemies[i];
+                var dist = (enemy.position - position).sqrMagnitude;
+                if (dist < minDist)
+                {
+                    attackTarget = enemy;
+                    minDist = dist;
+                }
+            }
+        }
+	}
+	private void MultiAttack(List<RTSUnit>[] unitsByOwner)
+	{
+		if (Info.MaxTarget > 1)
+		{
+			HashSet<RTSUnit> excludeSet = new HashSet<RTSUnit>();
+			excludeSet.Add(attackTarget);
+			for (int n = 1; n < Info.MaxTarget; n++)
+			{
+				var otherTarget = DetectEnemy(unitsByOwner, excludeSet);
+				if (otherTarget != null)
+					weapon.Attack(otherTarget);
+			}
+		}
+	}
+	private RTSUnit DetectEnemy(List<RTSUnit>[] unitsByOwner, HashSet<RTSUnit> excludeSet)
+	{
+		RTSUnit otherTarget = null;
+		float minDist = Info.detectionRangeSquare;
+		for (int player = 0; player < unitsByOwner.Length; player++)
+		{
+			if (team == player) continue;
+
+			var enemies = unitsByOwner[player];
+			for (int i = 0; i < enemies.Count; i++)
+			{
+				var enemy = enemies[i];
+
+				if (excludeSet.Contains(enemy)) continue;
+
+				if (weapon.InRangeOf(enemy.position))
+				{
+					var dist = (enemy.position - position).sqrMagnitude;
+					if (dist < minDist)
+					{
+						otherTarget = enemy;
+						minDist = dist;
+					}
+				}
+			}
+		}
+		if (otherTarget != null)
+        {
+			excludeSet.Add(otherTarget);
+        }
+		return otherTarget;
+	}
+
+	private IEnumerator DelayDoubleAttack()
+    {
+		yield return CoroutineHelper.WaitForSeconds(0.1f);
+
+		if (attackTarget != null)
+			weapon.Attack(attackTarget);
+	}
+
 	public void Die()
 	{
 		StartCoroutine(DieCoroutine());
@@ -329,23 +331,35 @@ public class RTSUnit : VersionedMonoBehaviour
 			//if (gold > 0)
 			//	GM.Instance.AddGold(gold);
 
-			if (exp > 0f)
-				GM.Instance.AddExp(exp);
+			if (Info.exp > 0f)
+				GM.Instance.AddExp(Info.exp);
 		}
-		if (deathEffect != null) GameObject.Instantiate(deathEffect, transform.position, transform.rotation);
+		if (Info.deathEffect != null) GameObject.Instantiate(Info.deathEffect, transform.position, transform.rotation);
 		GameObject.Destroy(gameObject);
 	}
 
-	public void ApplyDamage(float damage)
+	public void ApplyDamage(float damage, DamageType damageType)
 	{
-		health = Mathf.Clamp(health - damage, 0, maxHealth);
+		if (damageType == DamageType.ranged)
+		{
+			if (SkillSet.Contains(Skill.Defend))
+			{
+				int random = UnityEngine.Random.Range(0, 10);
+				if (random <= 1)
+                {
+					return;
+                }
+			}
+		}
 
-		if (type == Type.Wall)
+		currentHealth = Mathf.Clamp(currentHealth - damage, 0, Info.MaxHealth);
+
+		if (Info.type == UnitType.Wall)
 		{
 			GM.Instance.CalcWallHp();
 		}
 
-		if (health <= 0)
+		if (currentHealth <= 0)
 		{
 			Die();
 		}

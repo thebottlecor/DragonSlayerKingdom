@@ -8,8 +8,17 @@ public class DataManager : Singleton<DataManager>
     public UILibrary uiLib;
     public MaterialLibrary materialLib;
 
-    public ResearchLibrary researchLib;
-    public Dictionary<int, ResearchInfo> researches;
+    [SerializeField] private PerkLibrary perkLib;
+    public Dictionary<int, PerkInfo> perks;
+
+    [SerializeField] private UpgradeLibrary upgradeLib;
+    public Dictionary<int, UpgradeInfo> upgrades;
+
+    [SerializeField] private BuildingLibrary buildingLib;
+    public Dictionary<int, BuildingInfo> buildings;
+
+    [SerializeField] private UnitLibrary unitLib;
+    public Dictionary<UnitIdx, UnitInfo> units;
 
     protected override void Awake()
     {
@@ -28,7 +37,19 @@ public class DataManager : Singleton<DataManager>
 
     private void Start()
     {
-        researches = researchLib.GetHashMap();
+        perks = perkLib.GetHashMap();
+        upgrades = upgradeLib.GetHashMap();
+        buildings = buildingLib.GetHashMap();
+        foreach (var v in buildings)
+        {
+            v.Value.prefab.Set_Idx(v.Key);
+        }
+        units = unitLib.GetHashMap();
+        foreach (var v in units)
+        {
+            v.Value.CalcSomeValue();
+            v.Value.prefab.Set_Idx(v.Key);
+        }
         DOTween.Init();
     }
 }

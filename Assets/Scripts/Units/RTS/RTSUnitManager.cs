@@ -6,71 +6,10 @@ using Unity.Mathematics;
 
 public class RTSUnitManager
 {
-	public readonly List<RTSUnit> selectedUnits = new List<RTSUnit>();
-
-	public Camera cam;
 	public readonly List<RTSUnit> units = new List<RTSUnit>();
-	bool batchSelection = false;
-
-	RTSUnit mActiveUnit;
-	public RTSUnit activeUnit
-	{
-		get
-		{
-			return mActiveUnit;
-		}
-		set
-		{
-			if (value != mActiveUnit)
-			{
-				if (mActiveUnit != null) mActiveUnit.OnMakeActiveUnit(false);
-				mActiveUnit = value;
-				if (mActiveUnit != null) mActiveUnit.OnMakeActiveUnit(true);
-			}
-		}
-	}
-
-	public void Awake()
-	{
-		cam = Camera.main;
-	}
 
 	public void OnDestroy()
 	{
-	}
-
-	public void SetSelection(System.Predicate<RTSUnit> predicate)
-	{
-		try
-		{
-			batchSelection = true;
-			for (int i = 0; i < units.Count; i++)
-			{
-				units[i].selected = predicate(units[i]);
-			}
-		}
-		finally
-		{
-			batchSelection = false;
-			UpdateActiveUnit();
-		}
-	}
-
-	void UpdateActiveUnit()
-	{
-		if (!batchSelection) activeUnit = selectedUnits.Count > 0 ? selectedUnits[0] : null;
-	}
-
-	public void OnSelected(RTSUnit unit)
-	{
-		if (!selectedUnits.Contains(unit)) selectedUnits.Add(unit);
-		UpdateActiveUnit();
-	}
-
-	public void OnDeselected(RTSUnit unit)
-	{
-		selectedUnits.Remove(unit);
-		UpdateActiveUnit();
 	}
 
 	public void AddUnit(RTSUnit unit)
@@ -80,7 +19,6 @@ public class RTSUnitManager
 
 	public void RemoveUnit(RTSUnit unit)
 	{
-		OnDeselected(unit);
 		units.Remove(unit);
 	}
 
@@ -100,7 +38,7 @@ public class RTSUnitManager
 		if (Vector3.Distance(destination, previousMean) > thresholdDistance)
 		{
 			//Pathfinding.PathUtilities.GetPointsAroundPointWorldFlexible(destination, Quaternion.identity, positions);
-			Pathfinding.PathUtilities.FormationPacked(positions, destination, group[0].radius * 1.1f, new NativeMovementPlane(quaternion.identity));
+			Pathfinding.PathUtilities.FormationPacked(positions, destination, group[0].Radius * 1.1f, new NativeMovementPlane(quaternion.identity));
 		}
 		else
 		{

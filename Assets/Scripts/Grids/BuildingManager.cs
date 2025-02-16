@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 using System.Linq;
+using AYellowpaper.SerializedCollections;
 
 public class BuildingManager : Singleton<BuildingManager>
 {
@@ -25,12 +26,11 @@ public class BuildingManager : Singleton<BuildingManager>
     }
 
     [Header("설정값")]
-    public BuildingInfo[] buildingInfos;
     public float baseGrowthRating = 0.01f;
 
     [Header("게임 변수")]
     public ProductInfo productInfos;
-    public List<int> hasBuildings;
+    public SerializedDictionary<int, int> hasBuildings;
 
     public Queue<BuildingQueueInfo> buildingQueue;
     [Serializable]
@@ -68,34 +68,29 @@ public class BuildingManager : Singleton<BuildingManager>
     // 특정 시간마다 더해지는 주기당 보너스 골드
     public float bonus_gold;
 
+    public Dictionary<int, BuildingInfo> BuildingInfos => DataManager.Instance.buildings;
+
 
     protected override void Awake()
     {
         base.Awake();
-        for (int i = 0; i < buildingInfos.Length; i++)
-        {
-            if (buildingInfos[i].prefab != null)
-            {
-                buildingInfos[i].prefab.Set_Idx(i);
-            }
-        }
     }
 
     private void Start()
     {
         productInfos = new ProductInfo();
 
-        hasBuildings = new List<int>();
-        for (int n = 0; n < buildingInfos.Length; n++)
+        hasBuildings = new SerializedDictionary<int, int>();
+        foreach (var v in BuildingInfos)
         {
-            hasBuildings.Add(0);
+            hasBuildings.Add(v.Key, 0);
         }
 
         buildingQueue = new Queue<BuildingQueueInfo>();
         currentBuildingTimer = int.MinValue;
 
         // 임시 초기 설정
-        var temp = Instantiate(buildingInfos[0].prefab, Vector3.zero, Quaternion.identity);
+        var temp = Instantiate(BuildingInfos[0].prefab, Vector3.zero, Quaternion.identity);
         temp.Init();
         temp.transform.position = new Vector3(-100.125f, 1.625f, 0f);
         temp.Place();
@@ -118,7 +113,7 @@ public class BuildingManager : Singleton<BuildingManager>
                 {
                     var temp = buildingQueue.Dequeue();
                     currentBuildingInfo = temp;
-                    currentBuildingTimer = buildingInfos[temp.buildingIdx].build_time;
+                    currentBuildingTimer = BuildingInfos[temp.buildingIdx].build_time;
                     Debug.Log("건설 대기열 불러옴 " + currentBuildingInfo.buildingIdx);
                 }
             }
@@ -134,13 +129,13 @@ public class BuildingManager : Singleton<BuildingManager>
 
     public void BuildSomethingByBtn(int buildingIdx)
     {
-        if (GM.Instance.PayRes(buildingInfos[buildingIdx]))
+        if (GM.Instance.PayRes(BuildingInfos[buildingIdx]))
         {
             BuildingQueueInfo queueInfo = new BuildingQueueInfo { buildingIdx = buildingIdx };
             if (currentBuildingTimer == int.MinValue)
             {
                 currentBuildingInfo = queueInfo;
-                currentBuildingTimer = buildingInfos[buildingIdx].build_time;
+                currentBuildingTimer = BuildingInfos[buildingIdx].build_time;
             }
             else
             {
@@ -169,10 +164,10 @@ public class BuildingManager : Singleton<BuildingManager>
         int jobs = 0;
         int housing = 0;
 
-        for (int i = 0; i < hasBuildings.Count; i++)
+        foreach (var v in hasBuildings)
         {
-            int count = hasBuildings[i];
-            var stat = buildingInfos[i];
+            int count = v.Value;
+            var stat = BuildingInfos[v.Key];
 
             product_gold += stat.product_gold * count;
             product_metal += stat.product_metal * count;
@@ -253,7 +248,7 @@ public class BuildingManager : Singleton<BuildingManager>
     {
         int buildingIdx = building.idx;
 
-        if (GM.Instance.PayRes(buildingInfos[buildingIdx]))
+        if (GM.Instance.PayRes(BuildingInfos[buildingIdx]))
         {
             //BuildingQueueInfo queueInfo = new BuildingQueueInfo { buildingIdx = buildingIdx };
             //if (currentBuildingTimer == int.MinValue)
@@ -290,8 +285,8 @@ public class BuildingManager : Singleton<BuildingManager>
         for (int i = 0; i < playerBuildings.Count; i++)
         {
             // 스폰 체크
-            var su = buildingInfos[playerBuildings[i].idx].spawnUnit;
-            int count = buildingInfos[playerBuildings[i].idx].spawnCount;
+            var su = BuildingInfos[playerBuildings[i].idx].spawnUnit;
+            int count = BuildingInfos[playerBuildings[i].idx].spawnCount;
             if (su != null)
             {
                 Vector3 pos = playerBuildings[i].center.position;

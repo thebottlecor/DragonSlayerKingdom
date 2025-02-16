@@ -78,6 +78,11 @@ public class Building : MonoBehaviour
             GridBuildingSystem.Instance.TakeArea(areaTemp);
         }
     }
+    public void ReturnAndRemove()
+    {
+        GM.Instance.ReturnRes(BuildingManager.Instance.BuildingInfos[idx]);
+        Remove();
+    }
 
     public void Remove()
     {

@@ -820,9 +820,60 @@ Transform:
   m_Children:
   - {fileID: 1596509109}
   - {fileID: 361096725}
+  - {fileID: 1557063695}
   - {fileID: 1984801610}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1557063694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1557063695}
+  - component: {fileID: 1557063696}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1557063695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557063694}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1408058468}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1557063696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557063694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e342f76f016ec94686490c0301eec11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiLib: {fileID: 0}
+  materialLib: {fileID: 0}
+  perkLib: {fileID: 11400000, guid: 72e1cc509d54e2c4aabea1aa1e1d5726, type: 2}
+  upgradeLib: {fileID: 11400000, guid: 85bec923fd9a43248875c83f05a2d7e1, type: 2}
+  buildingLib: {fileID: 11400000, guid: 70cf5d684a8f3594f8d6639417583e41, type: 2}
+  unitLib: {fileID: 11400000, guid: e1c175a2bc78c684b9d841a09009a4d3, type: 2}
 --- !u!1 &1596509108
 GameObject:
   m_ObjectHideFlags: 0

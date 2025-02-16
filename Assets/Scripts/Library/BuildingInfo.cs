@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 [CreateAssetMenu(fileName = "BuildingInfo", menuName = "GameInfos/BuildingInfo")]
 public class BuildingInfo : ScriptableObject
 {
+    public int idx;
     public Building prefab;
     public bool indestructible;
 

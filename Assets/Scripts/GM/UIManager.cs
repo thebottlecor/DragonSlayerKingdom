@@ -16,7 +16,6 @@ public class UIManager : Singleton<UIManager>
 
     [Header("레벨업 정보")]
     public GameObject levelUpPanel;
-    public PerkSelectUI[] perkSelectUIs;
 
     private void Start()
     {
@@ -72,18 +71,20 @@ public class UIManager : Singleton<UIManager>
 
     public void OpenLevelUpPanel()
     {
-        for (int i = 0; i < perkSelectUIs.Length; i++)
+        bool perkAvailable = PerkManager.Instance.OpenPerkUI();
+
+        if (perkAvailable)
         {
-            perkSelectUIs[i].Init(0);
+            levelUpPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
-
-        levelUpPanel.SetActive(true);
-        Time.timeScale = 0f;
+        else // 선택 가능한 퍽이 하나도 없음
+        {
+            CloseLevelUpPanel();
+        }
     }
-    public void SelectPerks(int idx)
+    public void SelectPerks()
     {
-        // 퍽 효과 적용
-
         CloseLevelUpPanel();
     }
     public void CloseLevelUpPanel()
