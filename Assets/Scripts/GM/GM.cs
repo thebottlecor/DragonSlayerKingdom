@@ -27,8 +27,11 @@ public class GM : Singleton<GM>
     private int displayPop;
 
     public TextMeshProUGUI[] goldTexts;
+    public TextMeshProUGUI[] goldPlusTexts;
     public TextMeshProUGUI[] metalTexts;
+    public TextMeshProUGUI[] metalPlusTexts;
     public TextMeshProUGUI[] foodTexts;
+    public TextMeshProUGUI[] foodPlusTexts;
     public TextMeshProUGUI[] researchTexts;
 
     public TextMeshProUGUI[] popTexts;
@@ -81,6 +84,41 @@ public class GM : Singleton<GM>
 
 
     #region 자원 관련
+    public void ShowPlusTexts(float gold, float metal, float food)
+    {
+        string goldStr;
+        if (gold >= 0)
+            goldStr = $"(+{gold:F0})";
+        else
+            goldStr = $"({gold:F0})";
+
+        for (int i = 0; i < goldPlusTexts.Length; i++)
+        {
+            goldPlusTexts[i].text = goldStr;
+        }
+
+        string metalStr;
+        if (metal >= 0)
+            metalStr = $"(+{metal:F0})";
+        else
+            metalStr = $"({metal:F0})";
+
+        for (int i = 0; i < metalPlusTexts.Length; i++)
+        {
+            metalPlusTexts[i].text = metalStr;
+        }
+
+        string foodStr;
+        if (food >= 0)
+            foodStr = $"(+{food:F0})";
+        else
+            foodStr = $"({food:F0})";
+
+        for (int i = 0; i < foodPlusTexts.Length; i++)
+        {
+            foodPlusTexts[i].text = foodStr;
+        }
+    }
     public void AddGold(float value)
     {
         float target = gold + value;

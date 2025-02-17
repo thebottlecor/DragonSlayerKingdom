@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using AYellowpaper.SerializedCollections;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class SpawnTimer : Singleton<SpawnTimer>
 {
@@ -32,6 +33,7 @@ public class SpawnTimer : Singleton<SpawnTimer>
     public float timer;
     public float spawnTime = 10f;
     public int cycle;
+    public Slider timerSlider;
 
     public float gameTimer;
     public float dragonTime = 1200f;
@@ -98,6 +100,9 @@ public class SpawnTimer : Singleton<SpawnTimer>
 
             cycle++;
         }
+
+        float cyclePercent = timer / spawnTime;
+        timerSlider.value = cyclePercent;
 
         if (Input.GetKeyDown(KeyCode.Q))
         {

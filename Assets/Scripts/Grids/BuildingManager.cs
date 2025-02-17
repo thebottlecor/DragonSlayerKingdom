@@ -238,6 +238,7 @@ public class BuildingManager : Singleton<BuildingManager>
             GM.Instance.AddMetal(total_product_metal);
             GM.Instance.AddFood(total_product_food);
         }
+        GM.Instance.ShowPlusTexts(total_product_gold, total_product_metal, total_product_food);
         GM.Instance.CalcResearch(total_product_research);
 
         GM.Instance.CalcPop(total_pop);

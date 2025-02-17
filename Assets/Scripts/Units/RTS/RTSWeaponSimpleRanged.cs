@@ -27,7 +27,7 @@ public class RTSWeaponSimpleRanged : RTSWeapon
 		if (info.sourceEffect != null) GameObject.Instantiate(info.sourceEffect, sourceEffectRoot != null ? sourceEffectRoot.position : transform.position, sourceEffectRoot != null ? sourceEffectRoot.rotation : Quaternion.LookRotation(target.transform.position - transform.position, Vector3.up));
 		if (info.targetEffect != null) GameObject.Instantiate(info.targetEffect, target.transform.position, Quaternion.LookRotation(transform.position - target.transform.position, Vector3.up));
 
-		target.ApplyDamage(info.Damage, unit.Info.damageType);
+		target.ApplyDamage(info.Damage, unit.Info.damageType, unit);
 	}
 
     public override void ProjectileHit(Transform target)

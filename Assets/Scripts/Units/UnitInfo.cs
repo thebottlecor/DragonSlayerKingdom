@@ -19,6 +19,16 @@ public class UnitInfo : ScriptableObject
 
 	[SerializeField] private float maxHealth = 20f;
 	public float MaxHealth => maxHealth;
+	[SerializeField] private float regenHealth;
+	public float RegenHealth => regenHealth;
+
+	[SerializeField] private float maxMana;
+	public float MaxMana => maxMana;
+	[SerializeField] private float regenMana;
+	public float RegenMana => regenMana;
+
+	[SerializeField] private float armor;
+	public float Armor => armor;
 
 	public List<Skill> initSkills;
 
@@ -72,11 +82,15 @@ public enum Skill
 	Defend = 10,
 	DoubleShot = 20,
 	Charge = 30,
+	Block = 40,
+	FireArrow = 50,
+	Stomping = 60,
 }
 public enum DamageType
 {
 	melee,
 	ranged,
+	fire,
 }
 
 public enum UnitIdx

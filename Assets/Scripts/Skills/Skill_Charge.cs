@@ -8,27 +8,31 @@ public class Skill_Charge : MonoBehaviour
     public float cooldown = 10f;
     public float duration = 1.5f;
     public float moveSpeedMul = 2f;
+    private float moveBonus;
 
-    private float baseMoveSpeed;
+    public float armorBonus = 1f;
 
     private float cooldownTimer;
     private float durationTimer;
 
     FollowerEntity ai;
+    RTSUnit unit;
 
 
-    public void Run(FollowerEntity ai)
+    public void Run(FollowerEntity ai, RTSUnit unit)
     {
         if (cooldownTimer > 0f)
             return;
 
         this.ai = ai;
+        this.unit = unit;
 
-        baseMoveSpeed = ai.maxSpeed;
+        moveBonus = (moveSpeedMul - 1f) * unit.Info.MoveSpeed;
         cooldownTimer = cooldown;
         durationTimer = duration;
 
-        ai.maxSpeed = baseMoveSpeed * moveSpeedMul;
+        ai.maxSpeed += moveBonus;
+        unit.armor += armorBonus;
     }
 
 
@@ -44,7 +48,8 @@ public class Skill_Charge : MonoBehaviour
             durationTimer -= Time.deltaTime;
             if (durationTimer <= 0f)
             {
-                ai.maxSpeed = baseMoveSpeed;
+                ai.maxSpeed -= moveBonus;
+                unit.armor -= armorBonus;
             }
         }
     }

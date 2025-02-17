@@ -60,12 +60,16 @@ public class PerkManager : Singleton<PerkManager>
             for (int n = 0; n < perk.targetUnitIdx.Count; n++)
             {
                 UnitIdx idx = perk.targetUnitIdx[n];
+
+                // 스킬 적용
                 var newSkills = perk.addSkills;
                 for (int i = 0; i < newSkills.Count; i++)
                 {
                     if (!unitHasSkills[idx].Contains(newSkills[i]))
                         unitHasSkills[idx].Add(newSkills[i]);
                 }
+
+                // ??
             }
         }
     }

@@ -17,6 +17,7 @@ public class RTSUnit : VersionedMonoBehaviour
 	private Skill_Charge skill_Charge;
 
 	public float currentHealth;
+	public float currentMana;
 	IAstarAI ai;
 	FollowerEntity rvo;
 	MovementMode movementMode;
@@ -35,6 +36,11 @@ public class RTSUnit : VersionedMonoBehaviour
 	protected Vector3 position;
 	public UnitInfo Info => DataManager.Instance.units[idx];
 	public HashSet<Skill> SkillSet => PerkManager.Instance.unitHasSkills[idx];
+
+	private List<Buff> buffs;
+
+	public float armor;
+	public float Armor => Info.Armor + armor;
 
 	public float Radius
 	{
@@ -74,6 +80,7 @@ public class RTSUnit : VersionedMonoBehaviour
 		rvo = GetComponent<FollowerEntity>();
 		
 		weapon = GetComponent<RTSWeapon>();
+		buffs = new List<Buff>();
 	}
     private void Start()
     {
@@ -87,7 +94,10 @@ public class RTSUnit : VersionedMonoBehaviour
 		if (OnUpdateDelegate == null) OnUpdateDelegate = OnUpdate;
 		RTSManager.instance.units.AddUnit(this);
 		if (DataManager.Instance != null)
+		{
 			currentHealth = Info.MaxHealth;
+			currentMana = Info.MaxMana;
+		}
 		movementMode = MovementMode.AttackMove;
 		reachedDestination = true;
 		if (ai != null) lastDestination = ai.destination;
@@ -199,7 +209,7 @@ public class RTSUnit : VersionedMonoBehaviour
 							{
 								if (skill_Charge == null)
 									skill_Charge = gameObject.AddComponent<Skill_Charge>();
-								skill_Charge.Run(rvo);
+								skill_Charge.Run(rvo, this);
 							}
 						}
 						else
@@ -241,6 +251,17 @@ public class RTSUnit : VersionedMonoBehaviour
 				ai.destination = lastDestination;
 			}
 		}
+
+		if (Info.RegenHealth > 0f)
+        {
+			currentHealth += Time.deltaTime * Info.RegenHealth;
+			if (currentHealth > Info.MaxHealth) currentHealth = Info.MaxHealth;
+        }
+		if (Info.RegenMana > 0f)
+        {
+			currentMana += Time.deltaTime * Info.RegenMana;
+			if (currentMana > Info.MaxMana) currentMana = Info.MaxMana;
+		}
 	}
 
     private void DetectEnemy(List<RTSUnit>[] unitsByOwner)
@@ -265,11 +286,22 @@ public class RTSUnit : VersionedMonoBehaviour
 	}
 	private void MultiAttack(List<RTSUnit>[] unitsByOwner)
 	{
-		if (Info.MaxTarget > 1)
+		int bonusTarget = 0;
+		if (SkillSet.Contains(Skill.Stomping))
+        {
+			int random = UnityEngine.Random.Range(0, 10);
+			if (random <= 0)
+			{
+				bonusTarget = 1;
+			}
+		}
+
+		int maxTarget = Info.MaxTarget + bonusTarget;
+		if (maxTarget > 1)
 		{
 			HashSet<RTSUnit> excludeSet = new HashSet<RTSUnit>();
 			excludeSet.Add(attackTarget);
-			for (int n = 1; n < Info.MaxTarget; n++)
+			for (int n = 1; n < maxTarget; n++)
 			{
 				var otherTarget = DetectEnemy(unitsByOwner, excludeSet);
 				if (otherTarget != null)
@@ -338,7 +370,7 @@ public class RTSUnit : VersionedMonoBehaviour
 		GameObject.Destroy(gameObject);
 	}
 
-	public void ApplyDamage(float damage, DamageType damageType)
+	public void ApplyDamage(float damage, DamageType damageType, RTSUnit damageSource)
 	{
 		if (damageType == DamageType.ranged)
 		{
@@ -352,7 +384,32 @@ public class RTSUnit : VersionedMonoBehaviour
 			}
 		}
 
-		currentHealth = Mathf.Clamp(currentHealth - damage, 0, Info.MaxHealth);
+		float realDam = damage - Armor;
+		realDam = Mathf.Max(1f, realDam); // 최소 데미지 1
+
+		if (SkillSet.Contains(Skill.Block))
+        {
+			int random = UnityEngine.Random.Range(0, 10);
+			if (random <= 0)
+			{
+				realDam -= 10f;
+				realDam = Mathf.Max(0f, realDam);
+			}
+		}
+
+		if (damageSource != null)
+		{
+			if (damageSource.SkillSet.Contains(Skill.FireArrow))
+			{
+				int random = UnityEngine.Random.Range(0, 10);
+				if (random <= 0)
+				{
+					AddBuff<Buff_FireArrow>(this);
+				}
+			}
+		}
+
+		currentHealth = Mathf.Clamp(currentHealth - realDam, 0, Info.MaxHealth);
 
 		if (Info.type == UnitType.Wall)
 		{
@@ -363,5 +420,40 @@ public class RTSUnit : VersionedMonoBehaviour
 		{
 			Die();
 		}
+	}
+
+	public void AddBuff<T>(RTSUnit target) where T : Buff
+	{
+		var sameBuff = target.SameBuffCheck<T>();
+		if (sameBuff == null)
+		{
+			var newBuff = target.gameObject.AddComponent<T>();
+			newBuff.Run(target);
+			target.buffs.Add(newBuff);
+		}
+		else
+			sameBuff.Run(target);
+	}
+	public void RemoveBuff(Buff buff)
+    {
+		for (int i = buffs.Count - 1; i >= 0; i--)
+        {
+			if (buffs[i] == buff)
+            {
+				buffs.RemoveAt(i);
+				return;
+            }
+        }
+    }
+	public T SameBuffCheck<T>() where T : Buff
+	{
+		for (int i = 0; i < buffs.Count; i++)
+		{
+			if (buffs[i] is T)
+			{
+				return buffs[i] as T;
+			}
+		}
+		return null;
 	}
 }
