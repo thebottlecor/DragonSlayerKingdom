@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: 00 aPerkLibrary
   m_EditorClassIdentifier: 
   infos:
+  - {fileID: 11400000, guid: c37076aa6d760eb4dae627215c041c10, type: 2}
+  - {fileID: 11400000, guid: 057ac14bcee79294bb4a5a7d85d538d3, type: 2}
+  - {fileID: 11400000, guid: c0aac865f8c4f94459c616fcbe5ad14d, type: 2}
+  - {fileID: 11400000, guid: 44ded07389910f24998be3ca2c75c0cb, type: 2}
   - {fileID: 11400000, guid: 73c1f63dbeec32f4184e387c07a824d8, type: 2}
+  - {fileID: 11400000, guid: 5a9e30206317eaf45a5864e3627e26fc, type: 2}

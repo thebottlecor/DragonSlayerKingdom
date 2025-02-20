@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25d17aa1ab0772469bb7ad964bf5875, type: 3}
   m_Name: 00 Castle
   m_EditorClassIdentifier: 
+  idx: 0
   prefab: {fileID: 7077672549755597519, guid: b16429b614fa4ab43ab4554e3bb658ae, type: 3}
   indestructible: 1
+  icon: {fileID: 800295434522806508, guid: 8aa756f1ae02b1b46bfbcdc2070ad865, type: 3}
   product_gold: 10
   product_metal: 0
   product_food: 0

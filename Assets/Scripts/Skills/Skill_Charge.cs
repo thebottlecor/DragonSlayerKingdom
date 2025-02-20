@@ -5,12 +5,15 @@ using Pathfinding;
 
 public class Skill_Charge : MonoBehaviour
 {
-    public float cooldown = 10f;
-    public float duration = 1.5f;
-    public float moveSpeedMul = 2f;
+
+    SkillInfo Info => DataManager.Instance.skills[Skill.Charge];
+
+    float cooldown => Info.hiddenValue[0];
+    float duration => Info.dataValue[0];
+    float moveSpeedMul => (Info.dataValue[1] + 100f) / 100f;
     private float moveBonus;
 
-    public float armorBonus = 1f;
+    float armorBonus => Info.dataValue[2];
 
     private float cooldownTimer;
     private float durationTimer;

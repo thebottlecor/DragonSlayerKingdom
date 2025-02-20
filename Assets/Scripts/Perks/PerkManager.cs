@@ -68,7 +68,6 @@ public class PerkManager : Singleton<PerkManager>
                     if (!unitHasSkills[idx].Contains(newSkills[i]))
                         unitHasSkills[idx].Add(newSkills[i]);
                 }
-
                 // ??
             }
         }

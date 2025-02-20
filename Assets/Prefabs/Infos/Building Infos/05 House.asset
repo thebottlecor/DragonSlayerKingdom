@@ -15,9 +15,10 @@ MonoBehaviour:
   idx: 5
   prefab: {fileID: 7077672549755597519, guid: 35a2f119a1a88aa49aab96fdd6beb813, type: 3}
   indestructible: 0
+  icon: {fileID: 8504794, guid: aa23da34b667b7642946d46274fad851, type: 3}
   product_gold: 0
   product_metal: 0
-  product_food: 0
+  product_food: -5
   product_research: 0
   growth_rating: 0
   housingUse: 0

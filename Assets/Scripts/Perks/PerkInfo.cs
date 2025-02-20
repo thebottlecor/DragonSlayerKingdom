@@ -19,10 +19,4 @@ public class PerkInfo : ScriptableObject
     [Header("특전 효과")]
     public List<UnitIdx> targetUnitIdx;
     public List<Skill> addSkills;
-
-
-    public void AddEffect()
-    {
-
-    }
 }

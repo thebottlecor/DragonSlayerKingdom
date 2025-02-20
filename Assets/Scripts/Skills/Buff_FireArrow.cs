@@ -5,8 +5,10 @@ using Pathfinding;
 
 public class Buff_FireArrow : Buff
 {
-    public float duration = 5f;
-    public float damage = 2f;
+    SkillInfo Info => DataManager.Instance.skills[Skill.FireArrow];
+
+    float duration => Info.dataValue[0];
+    float damage => Info.dataValue[1];
 
     private float durationTimer;
 

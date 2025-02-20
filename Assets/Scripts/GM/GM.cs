@@ -54,6 +54,10 @@ public class GM : Singleton<GM>
     [SerializedDictionary("레벨", "필요누적EXP")]
     public List<float> levelExp;
 
+    [Space(20f)]
+    public GameObject winObj;
+    public GameObject loseObj;
+
     private void Start()
     {
         //// 테스트
@@ -122,6 +126,7 @@ public class GM : Singleton<GM>
     public void AddGold(float value)
     {
         float target = gold + value;
+        if (target < 0) target = 0;
         DOVirtual.Float(gold, target, 0.75f, (x) =>
         {
             displayGold = x;
@@ -154,6 +159,7 @@ public class GM : Singleton<GM>
     public void AddMetal(float value)
     {
         float target = metal + value;
+        if (target < 0) target = 0;
         DOVirtual.Float(metal, target, 0.75f, (x) =>
         {
             displayMetal = x; 
@@ -186,6 +192,7 @@ public class GM : Singleton<GM>
     public void AddFood(float value)
     {
         float target = food + value;
+        if (target < 0) target = 0;
         DOVirtual.Float(food, target, 0.75f, (x) =>
         {
             displayFood = x;
@@ -290,9 +297,9 @@ public class GM : Singleton<GM>
     {
         string str;
         if (housingUse >= housing)
-            str = $"<color=#A91111>{housingUse} / {housing}</color>";
+            str = $"<color=#A91111>{housingUse}/{housing}</color>";
         else
-            str = $"{housingUse} / {housing}";
+            str = $"{housingUse}/{housing}";
 
         for (int i = 0; i < housingTexts.Length; i++)
         {
@@ -368,6 +375,9 @@ public class GM : Singleton<GM>
             ShowWallHpText();
         }).SetEase(Ease.OutCirc).SetUpdate(true);
         wallHp = targetHp;
+
+        if (wallHp <= 0)
+            Lose();
     }
 
     private void ShowWallHpText()
@@ -380,6 +390,11 @@ public class GM : Singleton<GM>
     #endregion
 
     #region 레벨
+    [ContextMenu("레벨업 디버깅")]
+    public void LevelUpDebugging()
+    {
+        AddExp(levelExp[level]);
+    }
     public void SetExp(float value)
     {
         exp = value;
@@ -433,6 +448,18 @@ public class GM : Singleton<GM>
             expSilder.value = 1f;
             expText.text = "Lv.Max";
         }
+    }
+    #endregion
+
+    #region 승리 패배
+    public void Win()
+    {
+        winObj.SetActive(true);
+    }
+
+    public void Lose()
+    {
+        loseObj.SetActive(true);
     }
     #endregion
 }

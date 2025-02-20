@@ -113,9 +113,7 @@ public enum UnitType
 	Heavy,
 	Worker,
 	Harvester,
-	Wall,
 
-	HarvesterDropoff = 100,
-	HarvesterDropoffQueue,
-	ResourceCrystal = 200,
+	Wall = 900,
+	EnemySpawner = 950,
 }

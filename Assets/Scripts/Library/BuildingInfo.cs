@@ -11,6 +11,7 @@ public class BuildingInfo : ScriptableObject
     public int idx;
     public Building prefab;
     public bool indestructible;
+    public Sprite icon;
 
     [Header("¼Ó¼º")]
     public float product_gold;

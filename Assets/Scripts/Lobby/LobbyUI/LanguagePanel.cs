@@ -37,9 +37,6 @@ public class LanguagePanel : MonoBehaviour
             case SystemLanguage.Korean:
                 firstLanguage = Language.kr;
                 break;
-            case SystemLanguage.Russian:
-                firstLanguage = Language.ru;
-                break;
         }
 
         languageObjects = new List<LanguageObject>();

@@ -15,12 +15,16 @@ MonoBehaviour:
   idx: 900
   prefab: {fileID: 2619038897023700709, guid: 77a62d88f5dcd8d4f876f5cb8eac736b, type: 3}
   deathEffect: {fileID: 0}
-  type: 0
+  type: 950
   exp: 10
   detectionRange: 1.5
   rangeFuzz: 1.6500001
   detectionRangeSquare: 2.25
   maxHealth: 1000
+  regenHealth: 0
+  maxMana: 0
+  regenMana: 0
+  armor: 0
   initSkills: 
   maxTarget: 1
   moveSpeed: 0

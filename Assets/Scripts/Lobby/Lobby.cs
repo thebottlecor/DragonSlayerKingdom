@@ -93,7 +93,7 @@ public class Lobby : Singleton<Lobby>
         LoadingSceneManager.Instance.logueLoading = false;
         AudioManager.Instance.ToggleMute(false);
 
-        //lobbyUIObjects.SetActive(on);
+        lobbyUIObjects.SetActive(on);
         //SettingManager.Instance.LobbySwitch(on);
     }
 

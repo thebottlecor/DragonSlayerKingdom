@@ -10,6 +10,8 @@ public class DataManager : Singleton<DataManager>
 
     [SerializeField] private PerkLibrary perkLib;
     public Dictionary<int, PerkInfo> perks;
+    [SerializeField] private SkillLibrary skillLib;
+    public Dictionary<Skill, SkillInfo> skills;
 
     [SerializeField] private UpgradeLibrary upgradeLib;
     public Dictionary<int, UpgradeInfo> upgrades;
@@ -38,18 +40,24 @@ public class DataManager : Singleton<DataManager>
     private void Start()
     {
         perks = perkLib.GetHashMap();
+
+        skills = skillLib.GetHashMap();
+
         upgrades = upgradeLib.GetHashMap();
+
         buildings = buildingLib.GetHashMap();
         foreach (var v in buildings)
         {
             v.Value.prefab.Set_Idx(v.Key);
         }
+
         units = unitLib.GetHashMap();
         foreach (var v in units)
         {
             v.Value.CalcSomeValue();
             v.Value.prefab.Set_Idx(v.Key);
         }
+
         DOTween.Init();
     }
 }

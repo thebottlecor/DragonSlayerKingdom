@@ -18,9 +18,13 @@ MonoBehaviour:
   type: 0
   exp: 2
   detectionRange: 2
-  rangeFuzz: 0
-  detectionRangeSquare: 0
+  rangeFuzz: 2.2
+  detectionRangeSquare: 4
   maxHealth: 180
+  regenHealth: 0
+  maxMana: 0
+  regenMana: 0
+  armor: 0
   initSkills: 
   maxTarget: 1
   moveSpeed: 0.25

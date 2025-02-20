@@ -36,6 +36,7 @@ public class RTSUnit : VersionedMonoBehaviour
 	protected Vector3 position;
 	public UnitInfo Info => DataManager.Instance.units[idx];
 	public HashSet<Skill> SkillSet => PerkManager.Instance.unitHasSkills[idx];
+	public Dictionary<Skill, SkillInfo> SkillInfos => DataManager.Instance.skills;
 
 	private List<Buff> buffs;
 
@@ -205,7 +206,7 @@ public class RTSUnit : VersionedMonoBehaviour
 						{
 							ai.destination = attackTarget.position;
 
-							if (SkillSet.Contains(Skill.Charge))
+							if (SkillInfos[Skill.Charge].ChanceCheck(SkillSet))
 							{
 								if (skill_Charge == null)
 									skill_Charge = gameObject.AddComponent<Skill_Charge>();
@@ -217,14 +218,10 @@ public class RTSUnit : VersionedMonoBehaviour
 							wantsToAttack = true;
 							if (weapon.Aim(attackTarget))
 							{
-								if (SkillSet.Contains(Skill.DoubleShot))
-                                {
-									int random = UnityEngine.Random.Range(0, 10);
-									if (random <= 0)
-                                    {
-										StartCoroutine(DelayDoubleAttack());
-									}
-                                }
+								if (SkillInfos[Skill.DoubleShot].ChanceCheck(SkillSet))
+								{
+									StartCoroutine(DelayDoubleAttack());
+								}
 								weapon.Attack(attackTarget);
 								MultiAttack(unitsByOwner);
 							}
@@ -287,13 +284,9 @@ public class RTSUnit : VersionedMonoBehaviour
 	private void MultiAttack(List<RTSUnit>[] unitsByOwner)
 	{
 		int bonusTarget = 0;
-		if (SkillSet.Contains(Skill.Stomping))
-        {
-			int random = UnityEngine.Random.Range(0, 10);
-			if (random <= 0)
-			{
-				bonusTarget = 1;
-			}
+		if (SkillInfos[Skill.Stomping].ChanceCheck(SkillSet))
+		{
+			bonusTarget = (int)SkillInfos[Skill.Stomping].dataValue[0] - 1;
 		}
 
 		int maxTarget = Info.MaxTarget + bonusTarget;
@@ -352,6 +345,11 @@ public class RTSUnit : VersionedMonoBehaviour
 
 	public void Die()
 	{
+		if (Info.type == UnitType.EnemySpawner)
+        {
+			GM.Instance.Win(); // 임시
+        }
+
 		StartCoroutine(DieCoroutine());
 	}
 
@@ -374,38 +372,26 @@ public class RTSUnit : VersionedMonoBehaviour
 	{
 		if (damageType == DamageType.ranged)
 		{
-			if (SkillSet.Contains(Skill.Defend))
-			{
-				int random = UnityEngine.Random.Range(0, 10);
-				if (random <= 1)
-                {
-					return;
-                }
-			}
+			if (SkillInfos[Skill.Defend].ChanceCheck(SkillSet))
+            {
+				return;
+            }
 		}
 
 		float realDam = damage - Armor;
 		realDam = Mathf.Max(1f, realDam); // 최소 데미지 1
 
-		if (SkillSet.Contains(Skill.Block))
-        {
-			int random = UnityEngine.Random.Range(0, 10);
-			if (random <= 0)
-			{
-				realDam -= 10f;
-				realDam = Mathf.Max(0f, realDam);
-			}
+		if (SkillInfos[Skill.Block].ChanceCheck(SkillSet))
+		{
+			realDam -= SkillInfos[Skill.Block].dataValue[0];
+			realDam = Mathf.Max(0f, realDam);
 		}
 
 		if (damageSource != null)
 		{
-			if (damageSource.SkillSet.Contains(Skill.FireArrow))
-			{
-				int random = UnityEngine.Random.Range(0, 10);
-				if (random <= 0)
-				{
-					AddBuff<Buff_FireArrow>(this);
-				}
+			if (SkillInfos[Skill.FireArrow].ChanceCheck(SkillSet))
+            {
+				AddBuff<Buff_FireArrow>(this);
 			}
 		}
 

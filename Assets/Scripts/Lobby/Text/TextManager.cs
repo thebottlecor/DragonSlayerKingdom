@@ -12,7 +12,6 @@ public enum Language
     en,
     jp,
     kr,
-    ru,
     LAST,
 }
 
@@ -21,8 +20,20 @@ public class TextManager : Singleton<TextManager>
 
     public Language language;
 
-    Dictionary<int, Dictionary<string, object>> researches;
-    public string GetResearch(int idx) => researches[idx][language.ToString()].ToString();
+    Dictionary<int, Dictionary<string, object>> perks;
+    public string GetPerk(int idx) => perks[idx][language.ToString()].ToString();
+    Dictionary<int, Dictionary<string, object>> perkDetails;
+    public string GetPerkDetail(int idx) => perkDetails[idx][language.ToString()].ToString();
+    Dictionary<int, Dictionary<string, object>> buildings;
+    public string GetBuilding(int idx) => buildings[idx][language.ToString()].ToString();
+    Dictionary<int, Dictionary<string, object>> buildingDetails;
+    public string GetBuildingDetail(int idx) => buildingDetails[idx][language.ToString()].ToString();
+    Dictionary<int, Dictionary<string, object>> units;
+    public string GetUnit(int idx) => units[idx][language.ToString()].ToString();
+    Dictionary<int, Dictionary<string, object>> unitDetails;
+    public string GetUnitDetail(int idx) => unitDetails[idx][language.ToString()].ToString();
+
+
 
     Dictionary<string, Dictionary<string, object>> commons;
     public string GetCommons(string str) => commons[str][language.ToString()].ToString();
@@ -31,22 +42,6 @@ public class TextManager : Singleton<TextManager>
     Dictionary<KeyCode, Dictionary<string, object>> keycodes;
     public string GetKeyCodes(KeyCode idx) => keycodes[idx]["all"].ToString();
     public bool HasKeyCode(KeyCode idx) => keycodes.ContainsKey(idx);
-
-    Dictionary<KeyCode, Dictionary<string, object>> inputSystems;
-    public string GetInputSystems(KeyCode idx) => inputSystems[idx]["all"].ToString();
-    public bool HasInputSystems(KeyCode idx) => inputSystems.ContainsKey(idx);
-
-    Dictionary<int, Dictionary<string, object>> characters;
-    public string GetSurvivorName(int idx) => characters[idx][language.ToString()].ToString();
-
-    Dictionary<int, Dictionary<string, object>> villagers;
-    public string GetVillagerName(int idx) => villagers[idx][language.ToString()].ToString();
-
-    Dictionary<int, Dictionary<string, object>> vehicles;
-    public string GetVehicles(int idx) => vehicles[idx][language.ToString()].ToString();
-
-    Dictionary<int, Dictionary<string, object>> spaceships;
-    public string GetSpaceships(int idx) => spaceships[idx][language.ToString()].ToString();
 
     public CultureInfo defaultCultureInfo = new CultureInfo("en-US");
 
@@ -110,9 +105,6 @@ public class TextManager : Singleton<TextManager>
             case SystemLanguage.Korean:
                 firstLanguage = Language.kr;
                 break;
-            case SystemLanguage.Russian:
-                firstLanguage = Language.ru;
-                break;
         }
         SetLanguage(firstLanguage);
     }
@@ -121,14 +113,14 @@ public class TextManager : Singleton<TextManager>
     {
         this.language = language;
 
-        researches = CSVReader.ReadCSV<int>("TextManager - research.csv");
+        perks = CSVReader.ReadCSV<int>("TextManager - perk.csv");
+        perkDetails = CSVReader.ReadCSV<int>("TextManager - perkDetail.csv");
+        buildings = CSVReader.ReadCSV<int>("TextManager - building.csv");
+        buildingDetails = CSVReader.ReadCSV<int>("TextManager - buildingDetail.csv");
+        units = CSVReader.ReadCSV<int>("TextManager - unit.csv");
+        unitDetails = CSVReader.ReadCSV<int>("TextManager - unitDetail.csv");
         commons = CSVReader.ReadCSV<string>("TextManager - common.csv");
         keycodes = CSVReader.ReadCSV<KeyCode>("TextManager - keycode.csv");
-        inputSystems = CSVReader.ReadCSV<KeyCode>("TextManager - inputSystem.csv");
-        characters = CSVReader.ReadCSV<int>("TextManager - character.csv");
-        villagers = CSVReader.ReadCSV<int>("TextManager - villager.csv");
-        vehicles = CSVReader.ReadCSV<int>("TextManager - vehicle.csv");
-        spaceships = CSVReader.ReadCSV<int>("TextManager - spaceship.csv");
 
         //Lobby.Instance.UpdateTexts();
         //SettingManager.Instance.UpdateTexts();

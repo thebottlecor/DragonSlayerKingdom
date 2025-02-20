@@ -36,7 +36,7 @@ public class SpawnTimer : Singleton<SpawnTimer>
     public Slider timerSlider;
 
     public float gameTimer;
-    public float dragonTime = 1200f;
+    //public float dragonTime = 1200f;
 
     public TextMeshProUGUI gameTimerText;
 
@@ -51,7 +51,8 @@ public class SpawnTimer : Singleton<SpawnTimer>
     {
         gameTimer += Time.deltaTime;
 
-        float remainTimer = Mathf.Max(0f, dragonTime - gameTimer);
+        //float remainTimer = Mathf.Max(0f, dragonTime - gameTimer);
+        float remainTimer = gameTimer;
         int hour = (int)(remainTimer / 3600f);
         int minute = (int)((remainTimer - hour * 3600f) / 60f);
         int sec = (int)(remainTimer - minute * 60f - hour * 3600f);
